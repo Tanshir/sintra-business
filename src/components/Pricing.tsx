@@ -5,30 +5,30 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Starter",
-    price: "$29",
+    price: "$49",
     period: "/month",
-    description: "Perfect for small teams getting started with AI",
+    description: "Perfect for small teams trying AI employees",
     features: [
-      "Up to 5 team members",
-      "1,000 AI requests/month",
-      "Basic analytics",
+      "1 AI employee",
+      "Basic task automation",
       "Email support",
-      "API access"
+      "Standard integrations",
+      "Performance analytics"
     ],
     popular: false
   },
   {
     name: "Professional",
-    price: "$99",
+    price: "$199",
     period: "/month",
-    description: "Ideal for growing businesses and teams",
+    description: "Ideal for growing businesses",
     features: [
-      "Up to 25 team members",
-      "10,000 AI requests/month",
-      "Advanced analytics",
+      "5 AI employees",
+      "Advanced automation",
       "Priority support",
       "Custom integrations",
-      "Advanced AI models"
+      "Advanced analytics",
+      "Team collaboration tools"
     ],
     popular: true
   },
@@ -36,13 +36,13 @@ const plans = [
     name: "Enterprise",
     price: "Custom",
     period: "",
-    description: "For large organizations with custom needs",
+    description: "For large organizations",
     features: [
-      "Unlimited team members",
-      "Unlimited AI requests",
+      "Unlimited AI employees",
       "Custom AI training",
       "Dedicated support",
       "On-premise deployment",
+      "Custom workflows",
       "SLA guarantee"
     ],
     popular: false
@@ -55,14 +55,14 @@ export const Pricing = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Simple,
+            Your new team
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              {" "}Transparent{" "}
+              {" "}with infinite{" "}
             </span>
-            Pricing
+            knowledge
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Choose the perfect plan for your business needs. Start free and scale as you grow.
+            Choose the right plan to build your AI workforce. Scale as you grow.
           </p>
         </div>
         
@@ -72,7 +72,7 @@ export const Pricing = () => {
               key={index}
               className={`relative p-8 rounded-2xl border transition-all duration-300 hover:transform hover:scale-105 ${
                 plan.popular 
-                  ? 'bg-gradient-to-b from-purple-500/20 to-pink-500/20 border-purple-500/50' 
+                  ? 'bg-gradient-to-b from-purple-500/20 to-pink-500/20 border-purple-500/50 scale-105' 
                   : 'bg-gray-900/50 border-gray-700 hover:border-purple-500/50'
               }`}
             >
@@ -109,10 +109,22 @@ export const Pricing = () => {
                     : 'bg-gray-800 hover:bg-gray-700 text-white'
                 }`}
               >
-                {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
+                {plan.name === 'Enterprise' ? 'Contact Sales' : 'Start Free Trial'}
               </Button>
             </div>
           ))}
+        </div>
+        
+        {/* Additional info section */}
+        <div className="mt-20 text-center">
+          <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700 p-8">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Employee of the month, every month.
+            </h3>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Your AI employees consistently deliver outstanding performance, never take sick days, and continuously improve their skills.
+            </p>
+          </div>
         </div>
       </div>
     </section>

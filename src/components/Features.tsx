@@ -1,36 +1,36 @@
 
-import { Bot, Zap, Shield, BarChart3, Code, Users } from "lucide-react";
+import { Bot, Clock, Zap, Shield, BarChart3, Users } from "lucide-react";
 
 const features = [
   {
     icon: Bot,
-    title: "AI Automation",
-    description: "Automate repetitive tasks and workflows with intelligent AI agents that learn and adapt."
+    title: "AI Co-workers",
+    description: "Deploy AI employees that integrate seamlessly with your team and handle complex tasks autonomously."
+  },
+  {
+    icon: Clock,
+    title: "24/7 Availability",
+    description: "Your AI workforce never sleeps, ensuring continuous productivity around the clock."
   },
   {
     icon: Zap,
-    title: "Lightning Fast",
-    description: "Process data and generate insights in milliseconds with our optimized AI infrastructure."
+    title: "Instant Scaling",
+    description: "Scale your workforce instantly based on demand without recruitment delays or training time."
   },
   {
     icon: Shield,
-    title: "Enterprise Security",
-    description: "Bank-level security with end-to-end encryption and compliance with global standards."
+    title: "Enterprise Ready",
+    description: "Built with enterprise-grade security and compliance to protect your business data."
   },
   {
     icon: BarChart3,
-    title: "Advanced Analytics",
-    description: "Get deep insights into your business with AI-powered analytics and predictive modeling."
-  },
-  {
-    icon: Code,
-    title: "Easy Integration",
-    description: "Seamlessly integrate with your existing tools and workflows through our robust API."
+    title: "Performance Analytics",
+    description: "Track productivity, monitor performance, and optimize your AI workforce in real-time."
   },
   {
     icon: Users,
-    title: "Team Collaboration",
-    description: "Work together with your team using shared AI models and collaborative workspaces."
+    title: "Team Integration",
+    description: "AI employees work alongside your human team, enhancing collaboration and productivity."
   }
 ];
 
@@ -40,13 +40,13 @@ export const Features = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Powerful Features for
+            Meet Your New
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              {" "}Modern Business
+              {" "}AI Workforce
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Everything you need to transform your business with AI-powered solutions
+            Transform your business with AI employees that work tirelessly to grow your company
           </p>
         </div>
         
@@ -67,6 +67,20 @@ export const Features = () => {
               </p>
             </div>
           ))}
+        </div>
+        
+        {/* Additional visual section */}
+        <div className="mt-20 text-center">
+          <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-3xl border border-gray-700 p-12">
+            <h3 className="text-3xl font-bold text-white mb-6">
+              They learn your business.
+              <br />
+              <span className="text-purple-400">Just like real employees.</span>
+            </h3>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Our AI employees understand your workflows, adapt to your processes, and continuously improve their performance.
+            </p>
+          </div>
         </div>
       </div>
     </section>

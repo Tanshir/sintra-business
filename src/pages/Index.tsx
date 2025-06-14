@@ -8,13 +8,19 @@ import { Footer } from "../components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Header />
-      <Hero />
-      <Features />
-      <Pricing />
-      <CTA />
-      <Footer />
+    <div className="min-h-screen bg-black">
+      {/* Gradient background overlay */}
+      <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900 -z-10"></div>
+      
+      {/* Content */}
+      <div className="relative">
+        <Header />
+        <Hero />
+        <Features />
+        <Pricing />
+        <CTA />
+        <Footer />
+      </div>
     </div>
   );
 };

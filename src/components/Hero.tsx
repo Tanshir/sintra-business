@@ -4,63 +4,82 @@ import { ArrowRight, Play } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="pt-32 pb-20 px-4">
-      <div className="container mx-auto text-center">
-        <div className="animate-fade-in">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-sm mb-8">
-            <span className="mr-2">✨</span>
-            New: Advanced AI Models Available
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Transform Your
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              {" "}Business{" "}
-            </span>
-            with AI
-          </h1>
-          
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Harness the power of artificial intelligence to automate processes, gain insights, 
-            and scale your business like never before. Join thousands of companies already transforming with Sintra AI.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 text-lg"
-            >
-              Start Free Trial
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+    <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left side - Text content */}
+          <div className="animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-sm mb-8">
+              <span className="mr-2">✨</span>
+              Your employees that never sleep, never complain
+            </div>
             
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-4 text-lg"
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
-            </Button>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Your employees
+              <br />
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                that never sleep,
+              </span>
+              <br />
+              never complain
+            </h1>
+            
+            <p className="text-xl text-gray-300 mb-8 max-w-lg leading-relaxed">
+              Meet your AI workforce - employees that work 24/7, handle any task, and scale with your business needs.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 text-lg"
+              >
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-4 text-lg"
+              >
+                <Play className="mr-2 h-5 w-5" />
+                Watch Demo
+              </Button>
+            </div>
           </div>
           
-          <div className="relative mx-auto max-w-5xl">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-3xl"></div>
-            <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700 p-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-white mb-2">99.9%</div>
-                  <div className="text-gray-400">Uptime</div>
+          {/* Right side - Visual representation */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-3xl"></div>
+            <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-700 p-8 min-h-[400px] flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <span className="text-white font-bold text-2xl">AI</span>
                 </div>
-                <div>
-                  <div className="text-3xl font-bold text-white mb-2">50K+</div>
-                  <div className="text-gray-400">Active Users</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-white mb-2">24/7</div>
-                  <div className="text-gray-400">Support</div>
-                </div>
+                <p className="text-gray-300 text-lg">AI Employee Visualization</p>
               </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Stats section */}
+        <div className="mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700 p-6">
+              <div className="text-3xl font-bold text-white mb-2">24/7</div>
+              <div className="text-gray-400">Always Working</div>
+            </div>
+            <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700 p-6">
+              <div className="text-3xl font-bold text-white mb-2">99.9%</div>
+              <div className="text-gray-400">Accuracy Rate</div>
+            </div>
+            <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700 p-6">
+              <div className="text-3xl font-bold text-white mb-2">50K+</div>
+              <div className="text-gray-400">Tasks Completed</div>
+            </div>
+            <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700 p-6">
+              <div className="text-3xl font-bold text-white mb-2">0</div>
+              <div className="text-gray-400">Sick Days</div>
             </div>
           </div>
         </div>

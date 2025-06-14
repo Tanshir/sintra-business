@@ -10,32 +10,52 @@ export const CTA = () => {
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
+              A co-worker who's always on the clock.
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Join thousands of companies already using Sintra AI to automate, optimize, and scale their operations.
+              Deploy your AI workforce today and experience the future of business automation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
                 className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
               >
-                Start Free Trial
+                Start Your AI Team
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg"
-              >
-                Schedule Demo
               </Button>
             </div>
           </div>
           
           {/* Decorative elements */}
-          <div className="absolute top-0 left-0 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
-          <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
+          <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
+        </div>
+        
+        {/* Additional section */}
+        <div className="mt-20 text-center">
+          <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700 p-8">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Integrates with your favorite tools.
+            </h3>
+            <p className="text-gray-300 mb-6">
+              Connect with Slack, Microsoft Teams, Google Workspace, and 100+ other applications.
+            </p>
+            <div className="flex justify-center items-center space-x-8 opacity-60">
+              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center">
+                <span className="text-xs text-gray-300">Slack</span>
+              </div>
+              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center">
+                <span className="text-xs text-gray-300">Teams</span>
+              </div>
+              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center">
+                <span className="text-xs text-gray-300">Gmail</span>
+              </div>
+              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center">
+                <span className="text-xs text-gray-300">+100</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
