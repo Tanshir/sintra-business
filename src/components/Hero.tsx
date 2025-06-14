@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export const Hero = () => {
   return (
@@ -48,16 +49,19 @@ export const Hero = () => {
             </div>
           </div>
           
-          {/* Right side - Visual representation */}
+          {/* Right side - Video */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-3xl"></div>
-            <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-700 p-8 min-h-[400px] flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <span className="text-white font-bold text-2xl">AI</span>
-                </div>
-                <p className="text-gray-300 text-lg">AI Employee Visualization</p>
-              </div>
+            <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-700 p-4">
+              <AspectRatio ratio={16 / 9}>
+                <iframe
+                  src="https://www.youtube.com/embed/Bc2q06VhKIs"
+                  title="AI Employee Visualization"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full rounded-2xl"
+                />
+              </AspectRatio>
             </div>
           </div>
         </div>
