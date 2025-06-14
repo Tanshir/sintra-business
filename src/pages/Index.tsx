@@ -2,6 +2,7 @@
 import { Header } from "../components/Header";
 import { Hero } from "../components/Hero";
 import { Features } from "../components/Features";
+import { LearnBusiness } from "../components/LearnBusiness";
 import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
 
@@ -15,6 +16,7 @@ const Index = () => {
       <div className="relative">
         <Header />
         <Hero />
+        <LearnBusiness />
         <Features />
         <CTA />
         <Footer />
