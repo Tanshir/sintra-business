@@ -1,8 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 export const Hero = () => {
-  return <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+  return (
+    <section className="pt-32 pb-20 px-4 relative overflow-hidden">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
@@ -42,7 +44,22 @@ export const Hero = () => {
           {/* Right side - Video */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-3xl"></div>
-            
+            <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-700 p-8">
+              <video 
+                className="w-full h-auto rounded-2xl"
+                autoPlay 
+                muted 
+                loop
+                playsInline
+              >
+                <source src="/lovable-uploads/bb6ed5a9-a764-4c02-9823-a30c53f2d19e.png" type="video/mp4" />
+                <img 
+                  src="/lovable-uploads/bb6ed5a9-a764-4c02-9823-a30c53f2d19e.png" 
+                  alt="AI Workforce Demo"
+                  className="w-full h-auto rounded-2xl"
+                />
+              </video>
+            </div>
           </div>
         </div>
         
@@ -68,5 +85,6 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
