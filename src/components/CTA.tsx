@@ -1,0 +1,43 @@
+
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+export const CTA = () => {
+  return (
+    <section className="py-20 px-4">
+      <div className="container mx-auto">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 p-12 text-center">
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+              Join thousands of companies already using Sintra AI to automate, optimize, and scale their operations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
+              >
+                Start Free Trial
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg"
+              >
+                Schedule Demo
+              </Button>
+            </div>
+          </div>
+          
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-0 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
+        </div>
+      </div>
+    </section>
+  );
+};
