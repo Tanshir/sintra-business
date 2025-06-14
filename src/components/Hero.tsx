@@ -1,11 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-
 export const Hero = () => {
-  return (
-    <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+  return <section className="pt-32 pb-20 px-4 relative overflow-hidden">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
@@ -30,19 +27,12 @@ export const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 text-lg"
-              >
+              <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 text-lg">
                 Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-4 text-lg"
-              >
+              <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-4 text-lg">
                 <Play className="mr-2 h-5 w-5" />
                 Watch Demo
               </Button>
@@ -52,17 +42,7 @@ export const Hero = () => {
           {/* Right side - Video */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-3xl"></div>
-            <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-700 p-4">
-              <AspectRatio ratio={16 / 9}>
-                <iframe
-                  src="https://www.youtube.com/embed/Bc2q06VhKIs"
-                  title="AI Employee Visualization"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full rounded-2xl"
-                />
-              </AspectRatio>
-            </div>
+            
           </div>
         </div>
         
@@ -88,6 +68,5 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
