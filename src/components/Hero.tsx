@@ -12,6 +12,11 @@ export const Hero = () => {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-sm mb-8">
               <span className="mr-2">✨</span>
               Your employees that never sleep, never complain
+              <img 
+                src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" 
+                alt="AI Robot Characters"
+                className="ml-3 h-8 w-auto"
+              />
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
