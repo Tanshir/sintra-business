@@ -50,6 +50,13 @@ export const Hero = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-3xl"></div>
             <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-700 p-8">
+              <div className="flex items-center justify-center mb-4">
+                <img 
+                  src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" 
+                  alt="AI Robot Characters"
+                  className="h-16 w-auto"
+                />
+              </div>
               <video 
                 className="w-full h-auto rounded-2xl"
                 autoPlay 
