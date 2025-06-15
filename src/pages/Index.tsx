@@ -19,6 +19,21 @@ const Index = () => {
         <LearnBusiness />
         <Features />
         <CTA />
+        
+        {/* Animated Image Section */}
+        <section className="py-16 sm:py-20 px-4">
+          <div className="container mx-auto text-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-3xl"></div>
+              <img 
+                src="/lovable-uploads/1f9e2528-31f3-48d9-9854-d7e820902cd9.png" 
+                alt="AI Team Characters" 
+                className="relative z-10 w-full max-w-4xl mx-auto h-auto animate-float rounded-2xl shadow-2xl" 
+              />
+            </div>
+          </div>
+        </section>
+        
         <Footer />
       </div>
     </div>
