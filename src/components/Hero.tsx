@@ -1,23 +1,12 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-
 export const Hero = () => {
   return <section className="pt-32 pb-20 px-4 relative overflow-hidden">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="animate-fade-in">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-sm mb-8">
-              <img 
-                src="/lovable-uploads/3d8ba123-789d-4596-93a2-d9ecb67e88a0.png" 
-                alt="10X AI Business Solutions Logo" 
-                className="h-6 w-6 mr-3 rounded-full"
-              />
-              <span className="mr-2">✨</span>
-              Your employees that never sleep, never complain
-              <img src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" alt="AI Robot Characters" className="ml-3 h-8 w-auto" />
-            </div>
+            
             
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Your employees
@@ -51,18 +40,11 @@ export const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-3xl"></div>
             
             <div className="relative z-10 flex flex-col items-center space-y-6">
-              <img 
-                src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" 
-                alt="AI Robot Characters" 
-                className="w-full max-w-md h-auto animate-float"
-              />
+              <img src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" alt="AI Robot Characters" className="w-full max-w-md h-auto animate-float" />
               
-              <img 
-                src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" 
-                alt="Robot Astronaut" 
-                className="w-64 h-auto animate-float" 
-                style={{ animationDelay: '2s' }}
-              />
+              <img src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" alt="Robot Astronaut" className="w-64 h-auto animate-float" style={{
+              animationDelay: '2s'
+            }} />
             </div>
           </div>
         </div>
