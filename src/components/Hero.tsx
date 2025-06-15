@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 
@@ -33,7 +32,12 @@ export const Hero = () => {
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
               
-              <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-600 text-gray-300 hover:bg-gray-800 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
+                onClick={() => window.open('https://www.10xsocialmedia.agency/sintra', '_blank')}
+              >
                 <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Watch Demo
               </Button>
