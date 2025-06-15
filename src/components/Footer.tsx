@@ -1,19 +1,12 @@
-
 import { Github, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
-
 export const Footer = () => {
-  return (
-    <footer className="bg-black/80 backdrop-blur-sm border-t border-gray-800">
+  return <footer className="bg-black/80 backdrop-blur-sm border-t border-gray-800">
       <div className="container mx-auto px-4 py-12 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {/* Company Info */}
           <div className="col-span-1 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <img 
-                src="/lovable-uploads/3d8ba123-789d-4596-93a2-d9ecb67e88a0.png" 
-                alt="10X AI Business Solutions" 
-                className="h-8 w-8 rounded-lg" 
-              />
+              <img src="/lovable-uploads/3d8ba123-789d-4596-93a2-d9ecb67e88a0.png" alt="10X AI Business Solutions" className="h-8 w-8 rounded-lg" />
               <span className="text-white font-bold text-xl">
                 10X AI
               </span>
@@ -61,16 +54,7 @@ export const Footer = () => {
           </div>
           
           {/* Resources */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-6">Resources</h3>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">Documentation</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">API Reference</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">Support Center</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">Blog</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">Case Studies</a></li>
-            </ul>
-          </div>
+          
         </div>
         
         {/* Bottom Section */}
@@ -103,6 +87,5 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
