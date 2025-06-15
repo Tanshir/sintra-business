@@ -102,12 +102,12 @@ export default {
 						transform: 'translateY(0)'
 					}
 				},
-				'float': {
+				'breathe': {
 					'0%, 100%': {
-						transform: 'translateY(0px)'
+						transform: 'scale(1)'
 					},
 					'50%': {
-						transform: 'translateY(-5px)'
+						transform: 'scale(1.02)'
 					}
 				}
 			},
@@ -115,7 +115,7 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
-				'float': 'float 12s ease-in-out infinite'
+				'breathe': 'breathe 4s ease-in-out infinite'
 			}
 		}
 	},

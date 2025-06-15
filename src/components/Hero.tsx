@@ -1,5 +1,3 @@
-
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 
@@ -60,7 +58,7 @@ export const Hero = () => {
                 <img 
                   src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" 
                   alt="AI Robot Characters" 
-                  className="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto hover:scale-105 transition-transform duration-300 cursor-pointer animate-float" 
+                  className="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto hover:scale-105 transition-transform duration-300 cursor-pointer animate-breathe" 
                 />
               </a>
             </div>

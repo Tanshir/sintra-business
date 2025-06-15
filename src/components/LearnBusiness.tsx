@@ -136,7 +136,7 @@ export const LearnBusiness = () => {
                   <img 
                     src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" 
                     alt="Robot Astronaut" 
-                    className="w-32 sm:w-48 md:w-64 h-auto hover:scale-105 transition-transform duration-300 cursor-pointer animate-float" 
+                    className="w-32 sm:w-48 md:w-64 h-auto hover:scale-105 transition-transform duration-300 cursor-pointer animate-breathe" 
                   />
                 </a>
               </div>
