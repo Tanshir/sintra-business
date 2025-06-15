@@ -25,11 +25,18 @@ const Index = () => {
           <div className="container mx-auto text-center">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-3xl"></div>
-              <img 
-                src="/lovable-uploads/1f9e2528-31f3-48d9-9854-d7e820902cd9.png" 
-                alt="AI Team Characters" 
-                className="relative z-10 w-full max-w-4xl mx-auto h-auto animate-float rounded-2xl shadow-2xl" 
-              />
+              <a 
+                href="https://www.10xsocialmedia.agency/sintra" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <img 
+                  src="/lovable-uploads/1f9e2528-31f3-48d9-9854-d7e820902cd9.png" 
+                  alt="AI Team Characters" 
+                  className="relative z-10 w-full max-w-4xl mx-auto h-auto animate-float rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300 cursor-pointer" 
+                />
+              </a>
             </div>
           </div>
         </section>
