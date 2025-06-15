@@ -1,4 +1,3 @@
-
 import { Globe, Facebook, Users, FileText, MessageSquare, DollarSign } from "lucide-react";
 
 export const LearnBusiness = () => {
@@ -128,12 +127,19 @@ export const LearnBusiness = () => {
               
               {/* AI Character container with robot astronaut */}
               <div className="relative flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" 
-                  alt="Robot Astronaut" 
-                  className="w-32 sm:w-48 md:w-64 h-auto animate-float" 
-                  style={{ animationDelay: '2s' }}
-                />
+                <a 
+                  href="https://www.10xsocialmedia.agency/sintra" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <img 
+                    src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" 
+                    alt="Robot Astronaut" 
+                    className="w-32 sm:w-48 md:w-64 h-auto animate-float hover:scale-105 transition-transform duration-300 cursor-pointer" 
+                    style={{ animationDelay: '2s' }}
+                  />
+                </a>
               </div>
               
               {/* Connection points - hidden on mobile */}
