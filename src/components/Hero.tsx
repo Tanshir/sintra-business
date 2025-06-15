@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-
 export const Hero = () => {
-  return (
-    <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+  return <section className="pt-32 pb-20 px-4 relative overflow-hidden">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
@@ -11,11 +9,7 @@ export const Hero = () => {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-sm mb-8">
               <span className="mr-2">✨</span>
               Your employees that never sleep, never complain
-              <img 
-                src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" 
-                alt="AI Robot Characters"
-                className="ml-3 h-8 w-auto"
-              />
+              <img src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" alt="AI Robot Characters" className="ml-3 h-8 w-auto" />
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -48,20 +42,7 @@ export const Hero = () => {
           {/* Right side - Image */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-3xl"></div>
-            <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-700 p-8">
-              <div className="flex items-center justify-center mb-4">
-                <img 
-                  src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" 
-                  alt="AI Robot Characters"
-                  className="h-16 w-auto"
-                />
-              </div>
-              <img 
-                src="/lovable-uploads/bb6ed5a9-a764-4c02-9823-a30c53f2d19e.png" 
-                alt="AI Workforce Demo"
-                className="w-full h-auto rounded-2xl"
-              />
-            </div>
+            
           </div>
         </div>
         
@@ -87,6 +68,5 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
