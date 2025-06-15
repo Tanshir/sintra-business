@@ -34,7 +34,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/1f9e2528-31f3-48d9-9854-d7e820902cd9.png" 
                   alt="AI Team Characters" 
-                  className="relative z-10 w-full max-w-4xl mx-auto h-auto animate-float rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300 cursor-pointer" 
+                  className="relative z-10 w-full max-w-4xl mx-auto h-auto rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300 cursor-pointer" 
                 />
               </a>
             </div>
