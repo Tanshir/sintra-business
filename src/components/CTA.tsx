@@ -1,10 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
 export const CTA = () => {
-  return (
-    <section className="py-20 px-4">
+  return <section className="py-20 px-4">
       <div className="container mx-auto">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 p-12 text-center">
           <div className="absolute inset-0 bg-black/20"></div>
@@ -16,10 +13,7 @@ export const CTA = () => {
               Deploy your AI workforce today and experience the future of business automation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-              >
+              <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
                 Start Your AI Team
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -34,30 +28,8 @@ export const CTA = () => {
         
         {/* Additional section */}
         <div className="mt-20 text-center">
-          <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700 p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Integrates with your favorite tools.
-            </h3>
-            <p className="text-gray-300 mb-6">
-              Connect with Slack, Microsoft Teams, Google Workspace, and 100+ other applications.
-            </p>
-            <div className="flex justify-center items-center space-x-8 opacity-60">
-              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center">
-                <span className="text-xs text-gray-300">Slack</span>
-              </div>
-              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center">
-                <span className="text-xs text-gray-300">Teams</span>
-              </div>
-              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center">
-                <span className="text-xs text-gray-300">Gmail</span>
-              </div>
-              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center">
-                <span className="text-xs text-gray-300">+100</span>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
