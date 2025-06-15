@@ -1,42 +1,31 @@
-
 import { Bot, Clock, Zap, Shield, BarChart3, Users } from "lucide-react";
-
-const features = [
-  {
-    icon: Bot,
-    title: "AI Co-workers",
-    description: "Deploy AI employees that integrate seamlessly with your team and handle complex tasks autonomously."
-  },
-  {
-    icon: Clock,
-    title: "24/7 Availability",
-    description: "Your AI workforce never sleeps, ensuring continuous productivity around the clock."
-  },
-  {
-    icon: Zap,
-    title: "Instant Scaling",
-    description: "Scale your workforce instantly based on demand without recruitment delays or training time."
-  },
-  {
-    icon: Shield,
-    title: "Enterprise Ready",
-    description: "Built with enterprise-grade security and compliance to protect your business data."
-  },
-  {
-    icon: BarChart3,
-    title: "Performance Analytics",
-    description: "Track productivity, monitor performance, and optimize your AI workforce in real-time."
-  },
-  {
-    icon: Users,
-    title: "Team Integration",
-    description: "AI employees work alongside your human team, enhancing collaboration and productivity."
-  }
-];
-
+const features = [{
+  icon: Bot,
+  title: "AI Co-workers",
+  description: "Deploy AI employees that integrate seamlessly with your team and handle complex tasks autonomously."
+}, {
+  icon: Clock,
+  title: "24/7 Availability",
+  description: "Your AI workforce never sleeps, ensuring continuous productivity around the clock."
+}, {
+  icon: Zap,
+  title: "Instant Scaling",
+  description: "Scale your workforce instantly based on demand without recruitment delays or training time."
+}, {
+  icon: Shield,
+  title: "Enterprise Ready",
+  description: "Built with enterprise-grade security and compliance to protect your business data."
+}, {
+  icon: BarChart3,
+  title: "Performance Analytics",
+  description: "Track productivity, monitor performance, and optimize your AI workforce in real-time."
+}, {
+  icon: Users,
+  title: "Team Integration",
+  description: "AI employees work alongside your human team, enhancing collaboration and productivity."
+}];
 export const Features = () => {
-  return (
-    <section id="features" className="py-20 px-4">
+  return <section id="features" className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -51,11 +40,7 @@ export const Features = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="group p-8 rounded-2xl bg-gray-900/50 backdrop-blur-sm border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105"
-            >
+          {features.map((feature, index) => <div key={index} className="group p-8 rounded-2xl bg-gray-900/50 backdrop-blur-sm border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-6 group-hover:animate-float">
                 <feature.icon className="h-6 w-6 text-white" />
               </div>
@@ -65,24 +50,13 @@ export const Features = () => {
               <p className="text-gray-300 leading-relaxed">
                 {feature.description}
               </p>
-            </div>
-          ))}
+            </div>)}
         </div>
         
         {/* Additional visual section */}
         <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-3xl border border-gray-700 p-12">
-            <h3 className="text-3xl font-bold text-white mb-6">
-              They learn your business.
-              <br />
-              <span className="text-purple-400">Just like real employees.</span>
-            </h3>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Our AI employees understand your workflows, adapt to your processes, and continuously improve their performance.
-            </p>
-          </div>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
