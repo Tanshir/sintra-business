@@ -1,10 +1,13 @@
+
 import { Github, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+
 export const Footer = () => {
-  return <footer className="bg-black/80 backdrop-blur-sm border-t border-gray-800">
+  return (
+    <footer className="bg-black/80 backdrop-blur-sm border-t border-gray-800">
       <div className="container mx-auto px-4 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* Company Info */}
-          <div className="col-span-1 sm:col-span-2 lg:col-span-1">
+          <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
               <img src="/lovable-uploads/3d8ba123-789d-4596-93a2-d9ecb67e88a0.png" alt="10X AI Business Solutions" className="h-8 w-8 rounded-lg" />
               <span className="text-white font-bold text-xl">
@@ -17,15 +20,15 @@ export const Footer = () => {
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-300 text-sm">
-                <Mail className="h-4 w-4" />
+                <Mail className="h-4 w-4 flex-shrink-0" />
                 <span>contact@10xai.com</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300 text-sm">
-                <Phone className="h-4 w-4" />
+                <Phone className="h-4 w-4 flex-shrink-0" />
                 <span>+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300 text-sm">
-                <MapPin className="h-4 w-4" />
+                <MapPin className="h-4 w-4 flex-shrink-0" />
                 <span>San Francisco, CA</span>
               </div>
             </div>
@@ -52,27 +55,46 @@ export const Footer = () => {
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">Developers</a></li>
             </ul>
           </div>
-          
+
           {/* Resources */}
-          
+          <div>
+            <h3 className="text-white font-semibold text-lg mb-6">Resources</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">Documentation</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">API Reference</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">Support Center</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">Blog</a></li>
+            </ul>
+          </div>
         </div>
         
         {/* Bottom Section */}
         <div className="border-t border-gray-700 mt-12 pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 max-w-6xl mx-auto">
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
               <p className="text-gray-400 text-sm">© 2025 10X AI Business Solutions. All rights reserved.</p>
               <div className="flex space-x-4 text-sm">
-                
-                
-                
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
               </div>
             </div>
             
             {/* Social Links */}
-            
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Github className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
