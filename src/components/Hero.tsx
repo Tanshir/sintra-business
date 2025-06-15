@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 export const Hero = () => {
@@ -41,10 +42,6 @@ export const Hero = () => {
             
             <div className="relative z-10 flex flex-col items-center space-y-6">
               <img src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" alt="AI Robot Characters" className="w-full max-w-md h-auto animate-float" />
-              
-              <img src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" alt="Robot Astronaut" className="w-64 h-auto animate-float" style={{
-              animationDelay: '2s'
-            }} />
             </div>
           </div>
         </div>
@@ -70,6 +67,13 @@ export const Hero = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Animated Character moved to bottom of Hero section */}
+      <div className="absolute bottom-10 right-10 z-10">
+        <img src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" alt="Robot Astronaut" className="w-64 h-auto animate-float" style={{
+          animationDelay: '2s'
+        }} />
       </div>
     </section>;
 };
