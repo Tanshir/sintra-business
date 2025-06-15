@@ -9,6 +9,11 @@ export const Hero = () => {
           {/* Left side - Text content */}
           <div className="animate-fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-sm mb-8">
+              <img 
+                src="/lovable-uploads/3d8ba123-789d-4596-93a2-d9ecb67e88a0.png" 
+                alt="10X AI Business Solutions Logo" 
+                className="h-6 w-6 mr-3 rounded-full"
+              />
               <span className="mr-2">✨</span>
               Your employees that never sleep, never complain
               <img src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" alt="AI Robot Characters" className="ml-3 h-8 w-auto" />
