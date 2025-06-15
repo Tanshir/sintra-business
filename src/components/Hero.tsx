@@ -68,12 +68,5 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Animated Character moved to bottom of Hero section */}
-      <div className="absolute bottom-10 right-10 z-10">
-        <img src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" alt="Robot Astronaut" className="w-64 h-auto animate-float" style={{
-          animationDelay: '2s'
-        }} />
-      </div>
     </section>;
 };

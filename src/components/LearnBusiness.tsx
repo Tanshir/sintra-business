@@ -1,4 +1,3 @@
-
 import { Globe, Facebook, Users, FileText, MessageSquare, DollarSign } from "lucide-react";
 
 export const LearnBusiness = () => {
@@ -120,19 +119,20 @@ export const LearnBusiness = () => {
             </div>
           ))}
 
-          {/* Central AI character */}
+          {/* Central AI character - now using the robot astronaut */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ zIndex: 3 }}>
             <div className="relative">
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-3xl scale-150"></div>
               
-              {/* AI Character container */}
-              <div className="relative w-32 h-32 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center animate-float">
-                <div className="w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <div className="text-2xl">🤖</div>
-                  </div>
-                </div>
+              {/* AI Character container with robot astronaut */}
+              <div className="relative flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" 
+                  alt="Robot Astronaut" 
+                  className="w-64 h-auto animate-float" 
+                  style={{ animationDelay: '2s' }}
+                />
               </div>
               
               {/* Connection points */}
