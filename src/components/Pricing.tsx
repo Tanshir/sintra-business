@@ -108,6 +108,7 @@ export const Pricing = () => {
                     ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600'
                     : 'bg-gray-800 hover:bg-gray-700 text-white'
                 }`}
+                onClick={() => window.open('https://www.10xsocialmedia.agency/sintra', '_blank')}
               >
                 {plan.name === 'Enterprise' ? 'Contact Sales' : 'Start Free Trial'}
               </Button>
