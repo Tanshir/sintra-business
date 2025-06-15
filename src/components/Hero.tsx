@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 
@@ -49,11 +50,18 @@ export const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-3xl"></div>
             
             <div className="relative z-10 flex flex-col items-center space-y-6">
-              <img 
-                src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" 
-                alt="AI Robot Characters" 
-                className="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto" 
-              />
+              <a 
+                href="https://www.10xsocialmedia.agency/sintra" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <img 
+                  src="/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" 
+                  alt="AI Robot Characters" 
+                  className="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto hover:scale-105 transition-transform duration-300 cursor-pointer" 
+                />
+              </a>
             </div>
           </div>
         </div>
