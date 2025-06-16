@@ -1,3 +1,4 @@
+
 import { Globe, Facebook, Users, FileText, MessageSquare, DollarSign } from "lucide-react";
 
 export const LearnBusiness = () => {
@@ -16,7 +17,7 @@ export const LearnBusiness = () => {
       subtitle: "Trustpilot, 43 reviews",
       icon: Facebook,
       position: "left",
-      className: "top-1/4 sm:top-1/3 left-2 sm:left-8"
+      className: "top-20 sm:top-1/3 left-2 sm:left-8"
     },
     {
       id: 3,
@@ -24,7 +25,7 @@ export const LearnBusiness = () => {
       subtitle: "Company retreat 2024",
       icon: Users,
       position: "right",
-      className: "top-1/4 sm:top-1/3 right-2 sm:right-8"
+      className: "top-20 sm:top-1/3 right-2 sm:right-8"
     },
     {
       id: 4,
@@ -32,7 +33,7 @@ export const LearnBusiness = () => {
       subtitle: "sintra.ai, +2 more",
       icon: DollarSign,
       position: "bottom-left",
-      className: "bottom-1/4 sm:bottom-1/3 left-4 sm:left-16"
+      className: "top-40 sm:bottom-1/3 left-4 sm:left-16"
     },
     {
       id: 5,
@@ -40,7 +41,7 @@ export const LearnBusiness = () => {
       subtitle: "18 pages, guidelines",
       icon: FileText,
       position: "bottom-left-inner",
-      className: "bottom-4 sm:bottom-8 left-2 sm:left-8"
+      className: "top-56 sm:bottom-8 left-2 sm:left-8"
     },
     {
       id: 6,
@@ -48,7 +49,7 @@ export const LearnBusiness = () => {
       subtitle: "Follow-up scheduled",
       icon: MessageSquare,
       position: "bottom-right",
-      className: "bottom-1/4 sm:bottom-1/3 right-4 sm:right-16"
+      className: "top-40 sm:bottom-1/3 right-4 sm:right-16"
     },
     {
       id: 7,
@@ -56,7 +57,7 @@ export const LearnBusiness = () => {
       subtitle: "$25k budget",
       icon: FileText,
       position: "bottom-right-inner",
-      className: "bottom-4 sm:bottom-8 right-2 sm:right-8"
+      className: "top-56 sm:bottom-8 right-2 sm:right-8"
     }
   ];
 
@@ -78,7 +79,7 @@ export const LearnBusiness = () => {
         </div>
 
         {/* Interactive diagram */}
-        <div className="relative h-[600px] sm:h-[700px] lg:h-[800px] max-w-6xl mx-auto">
+        <div className="relative h-[700px] sm:h-[700px] lg:h-[800px] max-w-6xl mx-auto">
           {/* Connection lines - rendered as SVG for better control */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none hidden sm:block" style={{ zIndex: 1 }}>
             <defs>
@@ -105,10 +106,10 @@ export const LearnBusiness = () => {
               className={`absolute ${point.className} animate-fade-in`}
               style={{ zIndex: 2 }}
             >
-              <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700/50 p-3 sm:p-4 min-w-[180px] sm:min-w-[240px] hover:bg-gray-800/80 transition-all duration-300 hover:scale-105">
+              <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700/50 p-3 sm:p-4 min-w-[160px] sm:min-w-[240px] hover:bg-gray-800/80 transition-all duration-300 hover:scale-105">
                 <div className="flex items-center space-x-2 sm:space-x-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center">
-                    <point.icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-300" />
+                  <div className="w-6 h-6 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center">
+                    <point.icon className="w-3 h-3 sm:w-5 sm:h-5 text-gray-300" />
                   </div>
                   <div>
                     <div className="text-white font-semibold text-xs sm:text-sm">{point.title}</div>
@@ -136,7 +137,7 @@ export const LearnBusiness = () => {
                   <img 
                     src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" 
                     alt="Robot Astronaut" 
-                    className="w-32 sm:w-48 md:w-64 h-auto hover:scale-105 transition-transform duration-300 cursor-pointer" 
+                    className="w-24 sm:w-48 md:w-64 h-auto hover:scale-105 transition-transform duration-300 cursor-pointer" 
                   />
                 </a>
               </div>
