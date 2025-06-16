@@ -1,3 +1,5 @@
+
+
 import { Globe, Facebook, Users, FileText, MessageSquare, DollarSign } from "lucide-react";
 
 export const LearnBusiness = () => {
@@ -16,7 +18,7 @@ export const LearnBusiness = () => {
       subtitle: "Trustpilot, 43 reviews",
       icon: Facebook,
       position: "left",
-      className: "top-20 sm:top-1/4 left-2 sm:left-8"
+      className: "top-32 sm:top-1/4 left-4 sm:left-8"
     },
     {
       id: 3,
@@ -24,7 +26,7 @@ export const LearnBusiness = () => {
       subtitle: "Company retreat 2024",
       icon: Users,
       position: "right",
-      className: "top-20 sm:top-1/4 right-2 sm:right-8"
+      className: "top-32 sm:top-1/4 right-4 sm:right-8"
     },
     {
       id: 4,
@@ -32,7 +34,7 @@ export const LearnBusiness = () => {
       subtitle: "sintra.ai, +2 more",
       icon: DollarSign,
       position: "bottom-left",
-      className: "top-40 sm:bottom-1/4 left-2 sm:left-8"
+      className: "bottom-32 sm:bottom-1/4 left-4 sm:left-8"
     },
     {
       id: 5,
@@ -40,7 +42,7 @@ export const LearnBusiness = () => {
       subtitle: "18 pages, guidelines",
       icon: FileText,
       position: "bottom-left-inner",
-      className: "top-60 sm:bottom-8 left-2 sm:left-8"
+      className: "bottom-4 sm:bottom-8 left-4 sm:left-8"
     },
     {
       id: 6,
@@ -48,7 +50,7 @@ export const LearnBusiness = () => {
       subtitle: "Follow-up scheduled",
       icon: MessageSquare,
       position: "bottom-right",
-      className: "top-40 sm:bottom-1/4 right-2 sm:right-8"
+      className: "bottom-32 sm:bottom-1/4 right-4 sm:right-8"
     },
     {
       id: 7,
@@ -56,7 +58,7 @@ export const LearnBusiness = () => {
       subtitle: "$25k budget",
       icon: FileText,
       position: "bottom-right-inner",
-      className: "top-60 sm:bottom-8 right-2 sm:right-8"
+      className: "bottom-4 sm:bottom-8 right-4 sm:right-8"
     }
   ];
 
@@ -152,3 +154,4 @@ export const LearnBusiness = () => {
     </section>
   );
 };
+
