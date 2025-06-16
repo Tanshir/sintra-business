@@ -1,4 +1,5 @@
 
+
 import { Globe, Facebook, Users, FileText, MessageSquare, DollarSign } from "lucide-react";
 
 export const LearnBusiness = () => {
@@ -90,13 +91,13 @@ export const LearnBusiness = () => {
             </defs>
             
             {/* Connection lines to center */}
-            <path d="M 300 100 Q 400 200 500 400" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 100 250 Q 200 300 500 400" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 900 250 Q 800 300 500 400" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 200 550 Q 300 500 500 400" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 150 650 Q 300 550 500 400" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 800 550 Q 700 500 500 400" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 850 650 Q 700 550 500 400" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 300 100 Q 400 200 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 100 250 Q 200 300 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 900 250 Q 800 300 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 200 550 Q 300 500 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 150 650 Q 300 550 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 800 550 Q 700 500 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 850 650 Q 700 550 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
           </svg>
 
           {/* Information cards */}
@@ -120,27 +121,25 @@ export const LearnBusiness = () => {
             </div>
           ))}
 
-          {/* Central AI character */}
+          {/* Central AI character - perfectly centered */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ zIndex: 3 }}>
-            <div className="relative">
+            <div className="relative flex items-center justify-center">
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-3xl scale-150"></div>
               
               {/* AI Character container with robot astronaut */}
-              <div className="relative flex items-center justify-center">
-                <a 
-                  href="https://www.10xsocialmedia.agency/sintra" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <img 
-                    src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" 
-                    alt="Robot Astronaut" 
-                    className="w-24 sm:w-48 md:w-64 h-auto hover:scale-105 transition-transform duration-300 cursor-pointer" 
-                  />
-                </a>
-              </div>
+              <a 
+                href="https://www.10xsocialmedia.agency/sintra" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <img 
+                  src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" 
+                  alt="Robot Astronaut" 
+                  className="w-24 sm:w-48 md:w-64 h-auto hover:scale-105 transition-transform duration-300 cursor-pointer" 
+                />
+              </a>
               
               {/* Connection points - hidden on mobile */}
               <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full"></div>
@@ -155,3 +154,4 @@ export const LearnBusiness = () => {
     </section>
   );
 };
+
