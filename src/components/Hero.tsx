@@ -19,7 +19,7 @@ export const Hero = () => {
               never complain
             </h1>
             
-            <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">Meet your AI workforce - employees that work 24/7, handle any task, and scale with your Mortgage Broker business needs.</p>
+            <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">Meet your AI workforce - employees that work 24/7, handle any task, and scale with your business needs.</p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center lg:justify-start">
               <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto" onClick={() => window.open('https://www.10xsocialmedia.agency/sintra', '_blank')}>
