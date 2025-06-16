@@ -1,5 +1,3 @@
-
-
 import { Globe, Facebook, Users, FileText, MessageSquare, DollarSign } from "lucide-react";
 
 export const LearnBusiness = () => {
@@ -63,7 +61,7 @@ export const LearnBusiness = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-4 relative overflow-hidden">
+    <section className="hidden sm:block py-16 sm:py-24 lg:py-32 px-4 relative overflow-hidden">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
@@ -154,4 +152,3 @@ export const LearnBusiness = () => {
     </section>
   );
 };
-
