@@ -18,7 +18,7 @@ export const LearnBusiness = () => {
       subtitle: "Trustpilot, 43 reviews",
       icon: Facebook,
       position: "left",
-      className: "top-20 sm:top-1/3 left-2 sm:left-8"
+      className: "top-32 sm:top-1/4 left-4 sm:left-8"
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ export const LearnBusiness = () => {
       subtitle: "Company retreat 2024",
       icon: Users,
       position: "right",
-      className: "top-20 sm:top-1/3 right-2 sm:right-8"
+      className: "top-32 sm:top-1/4 right-4 sm:right-8"
     },
     {
       id: 4,
@@ -34,7 +34,7 @@ export const LearnBusiness = () => {
       subtitle: "sintra.ai, +2 more",
       icon: DollarSign,
       position: "bottom-left",
-      className: "top-40 sm:bottom-1/3 left-4 sm:left-16"
+      className: "bottom-32 sm:bottom-1/4 left-4 sm:left-8"
     },
     {
       id: 5,
@@ -42,7 +42,7 @@ export const LearnBusiness = () => {
       subtitle: "18 pages, guidelines",
       icon: FileText,
       position: "bottom-left-inner",
-      className: "top-56 sm:bottom-8 left-2 sm:left-8"
+      className: "bottom-4 sm:bottom-8 left-4 sm:left-8"
     },
     {
       id: 6,
@@ -50,7 +50,7 @@ export const LearnBusiness = () => {
       subtitle: "Follow-up scheduled",
       icon: MessageSquare,
       position: "bottom-right",
-      className: "top-40 sm:bottom-1/3 right-4 sm:right-16"
+      className: "bottom-32 sm:bottom-1/4 right-4 sm:right-8"
     },
     {
       id: 7,
@@ -58,7 +58,7 @@ export const LearnBusiness = () => {
       subtitle: "$25k budget",
       icon: FileText,
       position: "bottom-right-inner",
-      className: "top-56 sm:bottom-8 right-2 sm:right-8"
+      className: "bottom-4 sm:bottom-8 right-4 sm:right-8"
     }
   ];
 
@@ -91,13 +91,13 @@ export const LearnBusiness = () => {
             </defs>
             
             {/* Connection lines to center */}
-            <path d="M 300 100 Q 400 200 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 100 250 Q 200 300 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 900 250 Q 800 300 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 200 550 Q 300 500 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 150 650 Q 300 550 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 800 550 Q 700 500 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
-            <path d="M 850 650 Q 700 550 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 500 80 Q 500 200 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 120 200 Q 300 250 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 880 200 Q 700 250 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 120 500 Q 300 450 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 120 620 Q 300 500 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 880 500 Q 700 450 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 880 620 Q 700 500 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
           </svg>
 
           {/* Information cards */}
