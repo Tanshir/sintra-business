@@ -1,3 +1,4 @@
+
 import { Header } from "../components/Header";
 import { Hero } from "../components/Hero";
 import { Features } from "../components/Features";
@@ -9,7 +10,7 @@ import { LeadCaptureModal } from "../components/LeadCaptureModal";
 
 const Index = () => {
   const { isModalOpen, trigger, openModal, closeModal } = useLeadCapture({
-    timeDelay: 45000, // 45 seconds
+    timeDelay: 5000, // 5 seconds
     scrollPercentage: 60, // 60% scroll
     exitIntent: true
   });
@@ -22,7 +23,7 @@ const Index = () => {
       {/* Content */}
       <div className="relative">
         <Header />
-        <Hero onLeadCaptureClick={() => openModal('button')} />
+        <Hero />
         <LearnBusiness />
         <Features />
         <CTA />
