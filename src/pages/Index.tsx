@@ -1,12 +1,19 @@
-
 import { Header } from "../components/Header";
 import { Hero } from "../components/Hero";
 import { Features } from "../components/Features";
 import { LearnBusiness } from "../components/LearnBusiness";
 import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
+import { useLeadCapture } from "../hooks/useLeadCapture";
+import { LeadCaptureModal } from "../components/LeadCaptureModal";
 
 const Index = () => {
+  const { isModalOpen, trigger, openModal, closeModal } = useLeadCapture({
+    timeDelay: 45000, // 45 seconds
+    scrollPercentage: 60, // 60% scroll
+    exitIntent: true
+  });
+
   return (
     <div className="min-h-screen bg-black">
       {/* Gradient background overlay */}
@@ -15,7 +22,7 @@ const Index = () => {
       {/* Content */}
       <div className="relative">
         <Header />
-        <Hero />
+        <Hero onLeadCaptureClick={() => openModal('button')} />
         <LearnBusiness />
         <Features />
         <CTA />
@@ -43,6 +50,13 @@ const Index = () => {
         
         <Footer />
       </div>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal 
+        isOpen={isModalOpen} 
+        onClose={closeModal} 
+        trigger={trigger}
+      />
     </div>
   );
 };
