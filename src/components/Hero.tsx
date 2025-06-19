@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Users } from "lucide-react";
 import { useState } from "react";
@@ -49,17 +48,15 @@ export const Hero = ({ onLeadCaptureClick }: HeroProps) => {
                 Watch Demo
               </Button>
 
-              {onLeadCaptureClick && (
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-purple-500 text-purple-400 hover:bg-purple-500/10 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto" 
-                  onClick={onLeadCaptureClick}
-                >
-                  <Users className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                  Talk to Expert
-                </Button>
-              )}
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-purple-500 text-purple-400 hover:bg-purple-500/10 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto" 
+                onClick={onLeadCaptureClick}
+              >
+                <Users className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                Talk to Expert
+              </Button>
             </div>
           </div>
           
