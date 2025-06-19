@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
 import { Loader2 } from 'lucide-react';
 
 interface LeadCaptureFormProps {
@@ -57,32 +56,17 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration - you'll need to set these up in EmailJS dashboard
-      await emailjs.send(
-        'service_sintra', // Replace with your EmailJS service ID
-        'template_lead', // Replace with your EmailJS template ID
-        {
-          to_email: 'nicostuart.perth@gmail.com',
-          from_name: `${formData.firstName} ${formData.lastName}`,
-          business_name: formData.businessName,
-          email: formData.email,
-          phone: formData.phone,
-          message: `New lead from Sintra Business website:
-          
-Name: ${formData.firstName} ${formData.lastName}
-Business: ${formData.businessName}
-Email: ${formData.email}
-Phone: ${formData.phone}
-          
-Submitted on: ${new Date().toLocaleString()}`
-        },
-        'your_public_key' // Replace with your EmailJS public key
-      );
-
       // Save to localStorage for persistence
       const leads = JSON.parse(localStorage.getItem('sintra_leads') || '[]');
-      leads.push({ ...formData, timestamp: new Date().toISOString() });
+      const newLead = { 
+        ...formData, 
+        timestamp: new Date().toISOString(),
+        id: Date.now() // Simple ID for tracking
+      };
+      leads.push(newLead);
       localStorage.setItem('sintra_leads', JSON.stringify(leads));
+
+      console.log('Lead captured:', newLead);
 
       toast({
         title: "Success!",
@@ -100,7 +84,7 @@ Submitted on: ${new Date().toLocaleString()}`
 
       onSuccess?.();
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error('Form submission error:', error);
       toast({
         title: "Error",
         description: "Something went wrong. Please try again or contact us directly.",
