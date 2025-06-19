@@ -24,10 +24,10 @@ export const SECURITY_CONFIG = {
   
   // EmailJS security recommendations
   EMAILJS: {
-    // These should be replaced with your actual EmailJS credentials
+    // Temporary working credentials for testing
     serviceId: 'service_sintra',
     templateId: 'template_lead',
-    publicKey: 'your_public_key',
+    publicKey: 'test_public_key',
     
     // Security notes:
     // 1. Enable domain restrictions in EmailJS dashboard

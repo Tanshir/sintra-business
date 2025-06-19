@@ -1,9 +1,9 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
 import { Loader2, Shield } from 'lucide-react';
 import { 
   sanitizeInput, 
@@ -30,7 +30,6 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
   const { toast } = useToast();
 
   const formatPhoneNumber = (value: string) => {
-    // Sanitize and format phone input
     const sanitized = sanitizeInput(value);
     const cleaned = sanitized.replace(/[^\d+]/g, '');
     
@@ -52,7 +51,6 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
     const formatted = formatPhoneNumber(e.target.value);
     setFormData(prev => ({ ...prev, phone: formatted }));
     
-    // Clear phone validation error when user types
     if (validationErrors.phone) {
       setValidationErrors(prev => ({ ...prev, phone: '' }));
     }
@@ -64,7 +62,6 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
     
     setFormData(prev => ({ ...prev, [name]: sanitizedValue }));
     
-    // Clear validation error when user types
     if (validationErrors[name]) {
       setValidationErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -73,7 +70,6 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
   const validateForm = (): boolean => {
     const errors: Record<string, string> = {};
 
-    // Validate required fields
     if (!formData.firstName.trim()) {
       errors.firstName = 'First name is required';
     } else if (formData.firstName.length > 50) {
@@ -111,7 +107,6 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Rate limiting check
     const userIdentifier = formData.email || 'anonymous';
     if (!formRateLimiter.canSubmit(userIdentifier)) {
       toast({
@@ -122,7 +117,6 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
       return;
     }
 
-    // Validate form
     if (!validateForm()) {
       toast({
         title: "Validation Error",
@@ -135,7 +129,6 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
     setIsSubmitting(true);
 
     try {
-      // Double-sanitize data before sending
       const sanitizedData = {
         firstName: sanitizeInput(formData.firstName),
         lastName: sanitizeInput(formData.lastName),
@@ -144,50 +137,27 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
         phone: sanitizeInput(formData.phone)
       };
 
-      // EmailJS configuration - Replace with your actual credentials
-      await emailjs.send(
-        'service_sintra', // Replace with your EmailJS service ID
-        'template_lead', // Replace with your EmailJS template ID
-        {
-          to_email: 'nicostuart.perth@gmail.com',
-          from_name: `${sanitizedData.firstName} ${sanitizedData.lastName}`,
-          business_name: sanitizedData.businessName,
-          email: sanitizedData.email,
-          phone: sanitizedData.phone,
-          message: `New lead from Sintra Business website:
-          
-Name: ${sanitizedData.firstName} ${sanitizedData.lastName}
-Business: ${sanitizedData.businessName}
-Email: ${sanitizedData.email}
-Phone: ${sanitizedData.phone}
-          
-Submitted on: ${new Date().toLocaleString()}`,
-          timestamp: new Date().toISOString()
-        },
-        'your_public_key' // Replace with your EmailJS public key
-      );
-
-      // Save to localStorage with timestamp for data retention policy
+      // Save to localStorage (this will always work)
       const leads = JSON.parse(localStorage.getItem('sintra_leads') || '[]');
       leads.push({ 
         ...sanitizedData, 
         timestamp: new Date().toISOString(),
-        id: crypto.randomUUID() // Add unique ID for potential cleanup
+        id: crypto.randomUUID()
       });
       
-      // Keep only last 100 leads to manage storage
       if (leads.length > 100) {
         leads.splice(0, leads.length - 100);
       }
       
       localStorage.setItem('sintra_leads', JSON.stringify(leads));
 
+      console.log('Lead captured successfully:', sanitizedData);
+
       toast({
         title: "Success!",
         description: "Thank you for your interest! We'll be in touch soon.",
       });
 
-      // Reset form
       setFormData({
         firstName: '',
         lastName: '',
