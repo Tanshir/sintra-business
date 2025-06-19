@@ -1,18 +1,15 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Users } from "lucide-react";
 import { useState } from "react";
 import { VideoModal } from "./VideoModal";
-
 interface HeroProps {
   onLeadCaptureClick?: () => void;
 }
-
-export const Hero = ({ onLeadCaptureClick }: HeroProps) => {
+export const Hero = ({
+  onLeadCaptureClick
+}: HeroProps) => {
   const [videoOpen, setVideoOpen] = useState(false);
-  
-  return (
-    <section className="pt-20 sm:pt-32 pb-12 sm:pb-20 px-4 relative overflow-hidden">
+  return <section className="pt-20 sm:pt-32 pb-12 sm:pb-20 px-4 relative overflow-hidden">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left side - Text content */}
@@ -30,36 +27,17 @@ export const Hero = ({ onLeadCaptureClick }: HeroProps) => {
             <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">Meet your AI workforce - employees that work 24/7, handle any task, and scale with your business needs.</p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto" 
-                onClick={() => window.open('https://www.10xsocialmedia.agency/sintra', '_blank')}
-              >
+              <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto" onClick={() => window.open('https://www.10xsocialmedia.agency/sintra', '_blank')}>
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
               
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-gray-600 text-gray-300 hover:bg-gray-800 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto" 
-                onClick={() => setVideoOpen(true)}
-              >
+              <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto" onClick={() => setVideoOpen(true)}>
                 <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Watch Demo
               </Button>
 
-              {onLeadCaptureClick && (
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-purple-500 text-purple-400 hover:bg-purple-500/10 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto" 
-                  onClick={onLeadCaptureClick}
-                >
-                  <Users className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                  Talk to Expert
-                </Button>
-              )}
+              {onLeadCaptureClick}
             </div>
           </div>
           
@@ -98,6 +76,5 @@ export const Hero = ({ onLeadCaptureClick }: HeroProps) => {
         </div>
       </div>
       <VideoModal open={videoOpen} onOpenChange={setVideoOpen} />
-    </section>
-  );
+    </section>;
 };
