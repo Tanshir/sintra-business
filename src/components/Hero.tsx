@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Users } from "lucide-react";
 import { useState } from "react";
@@ -9,6 +10,11 @@ interface HeroProps {
 
 export const Hero = ({ onLeadCaptureClick }: HeroProps) => {
   const [videoOpen, setVideoOpen] = useState(false);
+  
+  const handleTalkToExpert = () => {
+    console.log('Talk to Expert button clicked');
+    onLeadCaptureClick?.();
+  };
   
   return (
     <section className="pt-20 sm:pt-32 pb-12 sm:pb-20 px-4 relative overflow-hidden">
@@ -52,7 +58,7 @@ export const Hero = ({ onLeadCaptureClick }: HeroProps) => {
                 size="lg" 
                 variant="outline" 
                 className="border-purple-500 text-purple-400 hover:bg-purple-500/10 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto" 
-                onClick={onLeadCaptureClick}
+                onClick={handleTalkToExpert}
               >
                 <Users className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Talk to Expert
