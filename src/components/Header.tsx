@@ -7,7 +7,7 @@ export const Header = () => {
             <img src="/lovable-uploads/3d8ba123-789d-4596-93a2-d9ecb67e88a0.png" alt="10X AI Business Solutions" className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg" />
             <span className="text-white font-bold text-lg sm:text-xl">
               <span className="hidden sm:inline">Sintra Business</span>
-              <span className="sm:hidden">10X AI Broker Tools</span>
+              <span className="sm:hidden">Sintra Business</span>
             </span>
           </div>
         </div>
