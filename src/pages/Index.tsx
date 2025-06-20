@@ -5,16 +5,8 @@ import { Features } from "../components/Features";
 import { LearnBusiness } from "../components/LearnBusiness";
 import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
-import { useLeadCapture } from "../hooks/useLeadCapture";
-import { LeadCaptureModal } from "../components/LeadCaptureModal";
 
 const Index = () => {
-  const { isModalOpen, trigger, openModal, closeModal } = useLeadCapture({
-    timeDelay: 5000, // 5 seconds
-    scrollPercentage: 60, // 60% scroll
-    exitIntent: true
-  });
-
   return (
     <div className="min-h-screen bg-black">
       {/* Gradient background overlay */}
@@ -51,13 +43,6 @@ const Index = () => {
         
         <Footer />
       </div>
-
-      {/* Lead Capture Modal */}
-      <LeadCaptureModal 
-        isOpen={isModalOpen} 
-        onClose={closeModal} 
-        trigger={trigger}
-      />
     </div>
   );
 };
