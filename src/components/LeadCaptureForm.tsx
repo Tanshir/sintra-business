@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
 import { Loader2 } from 'lucide-react';
+import { submitLeadToGHL } from '@/utils/ghlApi';
 
 interface LeadCaptureFormProps {
   onSuccess?: () => void;
@@ -21,6 +22,10 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  // GHL Configuration - Replace these with your actual values
+  const GHL_API_KEY = 'YOUR_GHL_API_KEY'; // Replace with your GHL API key
+  const GHL_LOCATION_ID = 'YOUR_GHL_LOCATION_ID'; // Replace with your GHL location ID
 
   // EmailJS Configuration - Replace these with your actual values
   const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
@@ -61,16 +66,38 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    let ghlSuccess = false;
+    let emailSuccess = false;
+
     try {
-      // Try to send email via EmailJS
+      // 1. Try to send to GoHighLevel first (primary method)
       try {
-        const emailParams = {
-          to_email: 'nicostuart.perth@gmail.com',
-          from_name: `${formData.firstName} ${formData.lastName}`,
-          business_name: formData.businessName,
-          email: formData.email,
-          phone: formData.phone,
-          message: `New lead from Sintra Business website:
+        if (GHL_API_KEY !== 'YOUR_GHL_API_KEY' && GHL_LOCATION_ID !== 'YOUR_GHL_LOCATION_ID') {
+          console.log('Sending lead to GoHighLevel...');
+          const ghlResponse = await submitLeadToGHL(formData, {
+            apiKey: GHL_API_KEY,
+            locationId: GHL_LOCATION_ID
+          });
+          console.log('GHL submission successful:', ghlResponse);
+          ghlSuccess = true;
+        } else {
+          console.log('GHL not configured, skipping...');
+        }
+      } catch (ghlError) {
+        console.error('GHL submission failed:', ghlError);
+      }
+
+      // 2. Try to send email via EmailJS (backup method)
+      try {
+        if (EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+          console.log('Sending email via EmailJS...');
+          const emailParams = {
+            to_email: 'nicostuart.perth@gmail.com',
+            from_name: `${formData.firstName} ${formData.lastName}`,
+            business_name: formData.businessName,
+            email: formData.email,
+            phone: formData.phone,
+            message: `New lead from Sintra Business website:
 
 Name: ${formData.firstName} ${formData.lastName}
 Business: ${formData.businessName}
@@ -78,42 +105,54 @@ Email: ${formData.email}
 Phone: ${formData.phone}
 
 Submitted on: ${new Date().toLocaleString()}`
-        };
+          };
 
-        await emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
-          emailParams,
-          EMAILJS_PUBLIC_KEY
-        );
-        
-        console.log('Email sent successfully via EmailJS');
-        
-        toast({
-          title: "Success!",
-          description: "Thank you for your interest! We'll be in touch soon.",
-        });
+          await emailjs.send(
+            EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_ID,
+            emailParams,
+            EMAILJS_PUBLIC_KEY
+          );
+          
+          console.log('Email sent successfully via EmailJS');
+          emailSuccess = true;
+        } else {
+          console.log('EmailJS not configured, skipping...');
+        }
       } catch (emailError) {
         console.error('EmailJS error:', emailError);
-        
-        // Show error but still save to localStorage
-        toast({
-          title: "Submission Received",
-          description: "Your information has been saved. We'll contact you soon! (Email service needs configuration)",
-        });
       }
 
-      // Save to localStorage for persistence (backup)
+      // 3. Always save to localStorage (final backup)
       const leads = JSON.parse(localStorage.getItem('sintra_leads') || '[]');
       const newLead = { 
         ...formData, 
         timestamp: new Date().toISOString(),
-        id: Date.now()
+        id: Date.now(),
+        ghlSuccess,
+        emailSuccess
       };
       leads.push(newLead);
       localStorage.setItem('sintra_leads', JSON.stringify(leads));
+      console.log('Lead saved to localStorage:', newLead);
 
-      console.log('Lead captured:', newLead);
+      // Show appropriate success message
+      if (ghlSuccess) {
+        toast({
+          title: "Success!",
+          description: "Thank you for your interest! Your lead has been submitted to our CRM and we'll be in touch soon.",
+        });
+      } else if (emailSuccess) {
+        toast({
+          title: "Success!",
+          description: "Thank you for your interest! We've received your information and will be in touch soon.",
+        });
+      } else {
+        toast({
+          title: "Submission Received",
+          description: "Your information has been saved. We'll contact you soon! (Please configure GHL or EmailJS for full functionality)",
+        });
+      }
 
       // Reset form
       setFormData({
