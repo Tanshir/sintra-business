@@ -22,6 +22,11 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  // EmailJS Configuration - Replace these with your actual values
+  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+  const EMAILJS_TEMPLATE_ID = 'template_lead'; // Replace with your EmailJS template ID
+  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
+
   const formatPhoneNumber = (value: string) => {
     // Remove all non-digits except the + at the start
     const cleaned = value.replace(/[^\d+]/g, '');
@@ -59,30 +64,43 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
     try {
       // Try to send email via EmailJS
       try {
-        await emailjs.send(
-          'service_sintra', // You'll need to configure this in EmailJS
-          'template_lead', // You'll need to configure this in EmailJS  
-          {
-            to_email: 'nicostuart.perth@gmail.com',
-            from_name: `${formData.firstName} ${formData.lastName}`,
-            business_name: formData.businessName,
-            email: formData.email,
-            phone: formData.phone,
-            message: `New lead from Sintra Business website:
-            
+        const emailParams = {
+          to_email: 'nicostuart.perth@gmail.com',
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          business_name: formData.businessName,
+          email: formData.email,
+          phone: formData.phone,
+          message: `New lead from Sintra Business website:
+
 Name: ${formData.firstName} ${formData.lastName}
 Business: ${formData.businessName}
 Email: ${formData.email}
 Phone: ${formData.phone}
-            
+
 Submitted on: ${new Date().toLocaleString()}`
-          },
-          'your_public_key' // You'll need to configure this in EmailJS
+        };
+
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          emailParams,
+          EMAILJS_PUBLIC_KEY
         );
+        
         console.log('Email sent successfully via EmailJS');
+        
+        toast({
+          title: "Success!",
+          description: "Thank you for your interest! We'll be in touch soon.",
+        });
       } catch (emailError) {
         console.error('EmailJS error:', emailError);
-        // Continue with localStorage backup even if email fails
+        
+        // Show error but still save to localStorage
+        toast({
+          title: "Submission Received",
+          description: "Your information has been saved. We'll contact you soon! (Email service needs configuration)",
+        });
       }
 
       // Save to localStorage for persistence (backup)
@@ -96,11 +114,6 @@ Submitted on: ${new Date().toLocaleString()}`
       localStorage.setItem('sintra_leads', JSON.stringify(leads));
 
       console.log('Lead captured:', newLead);
-
-      toast({
-        title: "Success!",
-        description: "Thank you for your interest! We'll be in touch soon.",
-      });
 
       // Reset form
       setFormData({
