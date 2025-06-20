@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 import { Loader2 } from 'lucide-react';
 
 interface LeadCaptureFormProps {
@@ -56,12 +57,40 @@ export const LeadCaptureForm = ({ onSuccess }: LeadCaptureFormProps) => {
     setIsSubmitting(true);
 
     try {
-      // Save to localStorage for persistence
+      // Try to send email via EmailJS
+      try {
+        await emailjs.send(
+          'service_sintra', // You'll need to configure this in EmailJS
+          'template_lead', // You'll need to configure this in EmailJS  
+          {
+            to_email: 'nicostuart.perth@gmail.com',
+            from_name: `${formData.firstName} ${formData.lastName}`,
+            business_name: formData.businessName,
+            email: formData.email,
+            phone: formData.phone,
+            message: `New lead from Sintra Business website:
+            
+Name: ${formData.firstName} ${formData.lastName}
+Business: ${formData.businessName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+            
+Submitted on: ${new Date().toLocaleString()}`
+          },
+          'your_public_key' // You'll need to configure this in EmailJS
+        );
+        console.log('Email sent successfully via EmailJS');
+      } catch (emailError) {
+        console.error('EmailJS error:', emailError);
+        // Continue with localStorage backup even if email fails
+      }
+
+      // Save to localStorage for persistence (backup)
       const leads = JSON.parse(localStorage.getItem('sintra_leads') || '[]');
       const newLead = { 
         ...formData, 
         timestamp: new Date().toISOString(),
-        id: Date.now() // Simple ID for tracking
+        id: Date.now()
       };
       leads.push(newLead);
       localStorage.setItem('sintra_leads', JSON.stringify(leads));
