@@ -1,26 +1,20 @@
-
 import React, { useState, useEffect } from 'react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { LeadCaptureForm } from './LeadCaptureForm';
 import { X } from 'lucide-react';
-
 interface LeadCaptureModalProps {
   isOpen: boolean;
   onClose: () => void;
   trigger?: 'time' | 'scroll' | 'exit' | 'button';
 }
-
-export const LeadCaptureModal = ({ isOpen, onClose, trigger = 'button' }: LeadCaptureModalProps) => {
+export const LeadCaptureModal = ({
+  isOpen,
+  onClose,
+  trigger = 'button'
+}: LeadCaptureModalProps) => {
   const handleSuccess = () => {
     onClose();
   };
-
   const getTriggerTitle = () => {
     switch (trigger) {
       case 'time':
@@ -33,7 +27,6 @@ export const LeadCaptureModal = ({ isOpen, onClose, trigger = 'button' }: LeadCa
         return "Transform Your Business with AI";
     }
   };
-
   const getTriggerDescription = () => {
     switch (trigger) {
       case 'time':
@@ -46,18 +39,12 @@ export const LeadCaptureModal = ({ isOpen, onClose, trigger = 'button' }: LeadCa
         return "Join thousands of businesses already using AI to automate processes, increase efficiency, and boost profits.";
     }
   };
-
-  return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+  return <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md bg-white">
         <DialogHeader className="space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <img 
-                src="/lovable-uploads/3d8ba123-789d-4596-93a2-d9ecb67e88a0.png" 
-                alt="Sintra Business" 
-                className="h-8 w-8 rounded-lg" 
-              />
+              <img src="/lovable-uploads/3d8ba123-789d-4596-93a2-d9ecb67e88a0.png" alt="Sintra Business" className="h-8 w-8 rounded-lg" />
               <span className="font-bold text-lg text-gray-900">Sintra Business</span>
             </div>
           </div>
@@ -82,6 +69,5 @@ export const LeadCaptureModal = ({ isOpen, onClose, trigger = 'button' }: LeadCa
           </p>
         </div>
       </DialogContent>
-    </Dialog>
-  );
+    </Dialog>;
 };
