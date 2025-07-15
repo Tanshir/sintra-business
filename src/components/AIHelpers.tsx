@@ -60,57 +60,51 @@ const aiHelpers = [
 
 export const AIHelpers = () => {
   return (
-    <section className="py-16 sm:py-20 px-4">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-            Sintra.
+    <section className="py-16 sm:py-20 px-4 bg-black">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            Sintra. World's first AI helpers,<br />
+            personalized for your business.<br />
+            Making work feel like play.
           </h2>
-          <p className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto">
-            World's first AI helpers, personalized for your business. Making work feel like play.
-          </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative">
           <Carousel
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-4">
               {aiHelpers.map((helper, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-700/50 backdrop-blur-sm h-full">
-                    <CardContent className="p-6 flex flex-col h-full">
-                      <div className="relative mb-6 mx-auto">
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl"></div>
+                <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative mb-6">
+                      <div className="w-80 h-80 bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-3xl p-6 backdrop-blur-sm border border-gray-700/30">
                         <img 
                           src={helper.image}
                           alt={helper.name}
-                          className="relative z-10 w-32 h-32 object-cover rounded-2xl mx-auto"
+                          className="w-full h-full object-cover rounded-2xl"
                         />
                       </div>
-                      
-                      <div className="text-center flex-1 flex flex-col">
-                        <h3 className="text-xl font-bold text-white mb-2">
-                          {helper.name}
-                        </h3>
-                        <p className="text-purple-300 font-semibold mb-4">
-                          {helper.role}
-                        </p>
-                        <p className="text-gray-300 text-sm leading-relaxed flex-1">
-                          {helper.description}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      {helper.name}
+                    </h3>
+                    
+                    <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
+                      {helper.role}. {helper.description}
+                    </p>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="bg-gray-800/50 border-gray-600 text-white hover:bg-gray-700/50" />
-            <CarouselNext className="bg-gray-800/50 border-gray-600 text-white hover:bg-gray-700/50" />
+            <CarouselPrevious className="absolute left-8 top-1/2 -translate-y-1/2 bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700/80 w-12 h-12 rounded-full" />
+            <CarouselNext className="absolute right-8 top-1/2 -translate-y-1/2 bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700/80 w-12 h-12 rounded-full" />
           </Carousel>
         </div>
       </div>
