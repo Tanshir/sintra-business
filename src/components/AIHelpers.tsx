@@ -81,7 +81,12 @@ export const AIHelpers = () => {
             <CarouselContent className="-ml-4">
               {aiHelpers.map((helper, index) => (
                 <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
-                  <div className="flex flex-col items-center text-center">
+                  <a 
+                    href="https://www.10xsocialmedia.agency/sintra"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 cursor-pointer"
+                  >
                     <div className="relative mb-6">
                       <div className="w-80 h-80 bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-3xl p-6 backdrop-blur-sm border border-gray-700/30">
                         <img 
@@ -99,7 +104,7 @@ export const AIHelpers = () => {
                     <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
                       {helper.role}. {helper.description}
                     </p>
-                  </div>
+                  </a>
                 </CarouselItem>
               ))}
             </CarouselContent>
