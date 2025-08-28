@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { useState } from "react";
@@ -66,8 +67,18 @@ export const Hero = () => {
           </div>
         </div>
         
+        {/* Pricing section */}
+        <div className={`mt-12 sm:mt-16 mb-8 sm:mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+          <div className="flex justify-center">
+            <div className="bg-gradient-to-r from-green-600 to-emerald-600 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-green-500/50 p-4 sm:p-6 text-center hover:border-green-400/70 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/20">
+              <div className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">Only $150</div>
+              <div className="text-sm sm:text-base text-green-100">Per Day</div>
+            </div>
+          </div>
+        </div>
+        
         {/* Stats section */}
-        <div className={`mt-12 sm:mt-20 transition-all duration-1000 delay-400 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+        <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
             <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700 p-4 sm:p-6 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20">
               <div className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">24/7</div>
