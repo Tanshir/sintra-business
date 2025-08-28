@@ -4,22 +4,22 @@ import { ArrowRight } from "lucide-react";
 
 export const CTA = () => {
   return (
-    <section className="py-16 sm:py-20 px-4 animate-[fadeInUp_1s_ease-out]">
+    <section className="py-16 sm:py-20 px-4 animate-slide-up">
       <div className="container mx-auto">
-        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 p-8 sm:p-12 text-center hover:scale-105 transition-all duration-500 animate-breathe">
+        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 p-8 sm:p-12 text-center hover:scale-105 transition-all duration-500">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 animate-[slideInDown_1s_ease-out_0.2s_both]">
-              <span className="inline-block hover:scale-110 transition-transform duration-300">A co-worker who's</span>{" "}
-              <span className="inline-block animate-pulse hover:animate-none hover:scale-110 transition-all duration-300">always on the clock.</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+              <span className="inline-block hover:scale-105 transition-transform duration-300">A co-worker who's</span>{" "}
+              <span className="inline-block hover:scale-105 transition-all duration-300">always on the clock.</span>
             </h2>
-            <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-4 animate-[fadeInUp_1s_ease-out_0.4s_both]">
+            <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               Deploy your AI workforce today and experience the future of business automation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-[slideInUp_1s_ease-out_0.6s_both]">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-white text-purple-600 hover:bg-gray-100 hover:scale-110 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 group animate-pulse hover:animate-none"
+                className="bg-white text-purple-600 hover:bg-gray-100 hover:scale-105 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 group"
                 onClick={() => window.open('https://playosinc.pxf.io/sintraaustralia', '_blank')}
               >
                 Start Your AI Team
@@ -28,10 +28,10 @@ export const CTA = () => {
             </div>
           </div>
           
-          {/* Decorative elements with animation */}
-          <div className="absolute top-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-white/10 rounded-full blur-2xl animate-[float_6s_ease-in-out_infinite]"></div>
-          <div className="absolute bottom-0 right-0 w-32 h-32 sm:w-40 sm:h-40 bg-white/10 rounded-full blur-2xl animate-[float_6s_ease-in-out_infinite_3s]"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 bg-white/5 rounded-full blur-xl animate-[float_4s_ease-in-out_infinite_1.5s]"></div>
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-white/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-0 right-0 w-32 h-32 sm:w-40 sm:h-40 bg-white/10 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 bg-white/5 rounded-full blur-xl"></div>
         </div>
       </div>
     </section>

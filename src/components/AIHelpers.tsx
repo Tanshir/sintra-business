@@ -1,3 +1,4 @@
+
 import {
   Carousel,
   CarouselContent,
@@ -63,17 +64,17 @@ export const AIHelpers = () => {
     <section className="py-16 sm:py-20 px-4 bg-black overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight animate-fade-in">
-            <span className="inline-block animate-[slideInLeft_1s_ease-out]">Sintra.</span>{" "}
-            <span className="inline-block animate-[slideInUp_1s_ease-out_0.2s_both]">World's first AI helpers,</span><br />
-            <span className="inline-block animate-[slideInRight_1s_ease-out_0.4s_both]">personalised for your business.</span><br />
-            <span className="inline-block animate-[fadeInUp_1s_ease-out_0.6s_both] bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight animate-slide-up">
+            <span className="inline-block">Sintra.</span>{" "}
+            <span className="inline-block">World's first AI helpers,</span><br />
+            <span className="inline-block">personalised for your business.</span><br />
+            <span className="inline-block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Making work feel like play.
             </span>
           </h2>
         </div>
 
-        <div className="relative animate-[fadeInUp_1s_ease-out_0.8s_both]">
+        <div className="relative opacity-0 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
           <Carousel
             opts={{
               align: "center",
@@ -83,26 +84,24 @@ export const AIHelpers = () => {
           >
             <CarouselContent className="-ml-4">
               {aiHelpers.map((helper, index) => (
-                <CarouselItem key={index} className={`pl-4 basis-full sm:basis-1/2 lg:basis-1/3 animate-[slideInUp_0.8s_ease-out_${index * 0.1}s_both]`}>
+                <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                   <a 
                     href="https://playosinc.pxf.io/sintraaustralia"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center text-center hover:scale-110 transition-all duration-500 ease-out cursor-pointer group"
+                    className="flex flex-col items-center text-center hover:scale-105 transition-all duration-300 ease-out cursor-pointer group"
                   >
-                    <div className="relative mb-6 transform transition-all duration-500 group-hover:rotate-3">
-                      <div className="w-80 h-80 bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-3xl p-6 backdrop-blur-sm border border-gray-700/30 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20">
+                    <div className="relative mb-6 transform transition-all duration-300">
+                      <div className="w-80 h-80 bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-3xl p-6 backdrop-blur-sm border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
                         <img 
                           src={helper.image}
                           alt={helper.name}
-                          className="w-full h-full object-cover rounded-2xl transition-all duration-500 group-hover:brightness-110 group-hover:contrast-110"
+                          className="w-full h-full object-cover rounded-2xl transition-all duration-300 group-hover:brightness-110"
                         />
                       </div>
-                      {/* Floating animation effect */}
-                      <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-white mb-2 transition-all duration-300 group-hover:text-purple-300 group-hover:scale-105">
+                    <h3 className="text-2xl font-bold text-white mb-2 transition-all duration-300 group-hover:text-purple-300">
                       {helper.name}
                     </h3>
                     

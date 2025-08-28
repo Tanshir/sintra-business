@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-black">
       {/* Gradient background overlay */}
-      <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900 -z-10 animate-[gradientShift_10s_ease-in-out_infinite]"></div>
+      <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900 -z-10"></div>
       
       {/* Content */}
       <div className="relative">
@@ -25,10 +25,10 @@ const Index = () => {
         <CTA />
         
         {/* Animated Image Section */}
-        <section className="py-16 sm:py-20 px-4 animate-[fadeInUp_1s_ease-out]">
+        <section className="py-16 sm:py-20 px-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
           <div className="container mx-auto text-center">
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-3xl animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-3xl"></div>
               <a 
                 href="https://playosinc.pxf.io/sintraaustralia" 
                 target="_blank" 
@@ -41,10 +41,6 @@ const Index = () => {
                   className="relative z-10 w-full max-w-4xl mx-auto h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer mix-blend-screen opacity-90 contrast-110 brightness-90 hover:brightness-110 group-hover:shadow-purple-500/25" 
                 />
               </a>
-              {/* Floating particles effect */}
-              <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-400 rounded-full opacity-50 animate-[float_3s_ease-in-out_infinite]"></div>
-              <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-pink-400 rounded-full opacity-30 animate-[float_4s_ease-in-out_infinite_1s]"></div>
-              <div className="absolute top-1/2 left-3/4 w-1 h-1 bg-blue-400 rounded-full opacity-70 animate-[float_2s_ease-in-out_infinite_2s]"></div>
             </div>
           </div>
         </section>

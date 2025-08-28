@@ -1,3 +1,4 @@
+
 import { Globe, Facebook, Users, FileText, MessageSquare, DollarSign } from "lucide-react";
 
 export const LearnBusiness = () => {
@@ -65,12 +66,12 @@ export const LearnBusiness = () => {
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            <span className="inline-block animate-[slideInLeft_1s_ease-out] hover:scale-105 transition-transform duration-300">They learn your business.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight animate-slide-up">
+            <span className="inline-block hover:scale-105 transition-transform duration-300">They learn your business.</span>
             <br />
-            <span className="text-gray-400 inline-block animate-[slideInRight_1s_ease-out_0.3s_both] hover:text-white transition-colors duration-300">Just like real employees.</span>
+            <span className="text-gray-400 inline-block hover:text-white transition-colors duration-300">Just like real employees.</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 animate-[fadeInUp_1s_ease-out_0.6s_both]">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
             Answer questions about your brand, add files, instructions, and your website for more
             <br className="hidden sm:block" />
             unique results. The more information they have, the better the outcome.
@@ -78,9 +79,9 @@ export const LearnBusiness = () => {
         </div>
 
         {/* Interactive diagram */}
-        <div className="relative h-[700px] sm:h-[700px] lg:h-[800px] max-w-6xl mx-auto animate-[fadeInUp_1s_ease-out_0.8s_both]">
-          {/* Connection lines - rendered as SVG for better control */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none hidden sm:block animate-[fadeIn_2s_ease-out_1s_both]" style={{ zIndex: 1 }}>
+        <div className="relative h-[700px] sm:h-[700px] lg:h-[800px] max-w-6xl mx-auto opacity-0 animate-scale-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
+          {/* Connection lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none hidden sm:block" style={{ zIndex: 1 }}>
             <defs>
               <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="rgb(147, 51, 234)" stopOpacity="0.3" />
@@ -88,24 +89,27 @@ export const LearnBusiness = () => {
               </linearGradient>
             </defs>
             
-            {/* Connection lines to center with animation */}
-            <path d="M 500 80 Q 500 200 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" className="animate-[drawLine_1.5s_ease-out_1.2s_both]" />
-            <path d="M 120 200 Q 300 250 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" className="animate-[drawLine_1.5s_ease-out_1.4s_both]" />
-            <path d="M 880 200 Q 700 250 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" className="animate-[drawLine_1.5s_ease-out_1.6s_both]" />
-            <path d="M 120 500 Q 300 450 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" className="animate-[drawLine_1.5s_ease-out_1.8s_both]" />
-            <path d="M 120 620 Q 300 500 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" className="animate-[drawLine_1.5s_ease-out_2s_both]" />
-            <path d="M 880 500 Q 700 450 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" className="animate-[drawLine_1.5s_ease-out_2.2s_both]" />
-            <path d="M 880 620 Q 700 500 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" className="animate-[drawLine_1.5s_ease-out_2.4s_both]" />
+            <path d="M 500 80 Q 500 200 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 120 200 Q 300 250 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 880 200 Q 700 250 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 120 500 Q 300 450 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 120 620 Q 300 500 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 880 500 Q 700 450 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
+            <path d="M 880 620 Q 700 500 500 350" stroke="url(#connectionGradient)" strokeWidth="2" fill="none" />
           </svg>
 
           {/* Information cards */}
           {connectionPoints.map((point, index) => (
             <div
               key={point.id}
-              className={`absolute ${point.className} animate-[slideInUp_0.8s_ease-out_${1.2 + index * 0.1}s_both]`}
-              style={{ zIndex: 2 }}
+              className={`absolute ${point.className} opacity-0 animate-fade-in`}
+              style={{ 
+                zIndex: 2,
+                animationDelay: `${0.6 + index * 0.1}s`,
+                animationFillMode: 'forwards'
+              }}
             >
-              <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700/50 p-3 sm:p-4 min-w-[160px] sm:min-w-[240px] hover:bg-gray-800/80 hover:border-purple-500/50 transition-all duration-500 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 group">
+              <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700/50 p-3 sm:p-4 min-w-[160px] sm:min-w-[240px] hover:bg-gray-800/80 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20 group">
                 <div className="flex items-center space-x-2 sm:space-x-3">
                   <div className="w-6 h-6 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-purple-600 transition-all duration-300">
                     <point.icon className="w-3 h-3 sm:w-5 sm:h-5 text-gray-300 group-hover:text-white transition-colors duration-300" />
@@ -119,13 +123,11 @@ export const LearnBusiness = () => {
             </div>
           ))}
 
-          {/* Central AI character - perfectly centered */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-[scaleIn_1s_ease-out_2.6s_both]" style={{ zIndex: 3 }}>
+          {/* Central AI character */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 animate-scale-in" style={{ zIndex: 3, animationDelay: '0.8s', animationFillMode: 'forwards' }}>
             <div className="relative flex items-center justify-center">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-3xl scale-150 animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-3xl"></div>
               
-              {/* AI Character container with robot astronaut */}
               <a 
                 href="https://playosinc.pxf.io/sintraaustralia" 
                 target="_blank" 
@@ -135,16 +137,16 @@ export const LearnBusiness = () => {
                 <img 
                   src="/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" 
                   alt="Robot Astronaut" 
-                  className="w-24 sm:w-48 md:w-64 h-auto hover:scale-110 transition-all duration-500 cursor-pointer animate-breathe group-hover:animate-none" 
+                  className="w-24 sm:w-48 md:w-64 h-auto hover:scale-110 transition-all duration-500 cursor-pointer" 
                 />
               </a>
               
-              {/* Connection points - hidden on mobile */}
-              <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
-              <div className="hidden sm:block absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
-              <div className="hidden sm:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
-              <div className="hidden sm:block absolute bottom-0 left-1/4 transform -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
-              <div className="hidden sm:block absolute bottom-0 right-1/4 transform translate-x-1/2 translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+              {/* Connection points */}
+              <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full"></div>
+              <div className="hidden sm:block absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full"></div>
+              <div className="hidden sm:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full"></div>
+              <div className="hidden sm:block absolute bottom-0 left-1/4 transform -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full"></div>
+              <div className="hidden sm:block absolute bottom-0 right-1/4 transform translate-x-1/2 translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full"></div>
             </div>
           </div>
         </div>
