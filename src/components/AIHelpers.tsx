@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -61,17 +60,20 @@ const aiHelpers = [
 
 export const AIHelpers = () => {
   return (
-    <section className="py-16 sm:py-20 px-4 bg-black">
+    <section className="py-16 sm:py-20 px-4 bg-black overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            Sintra. World's first AI helpers,<br />
-            personalised for your business.<br />
-            Making work feel like play.
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight animate-fade-in">
+            <span className="inline-block animate-[slideInLeft_1s_ease-out]">Sintra.</span>{" "}
+            <span className="inline-block animate-[slideInUp_1s_ease-out_0.2s_both]">World's first AI helpers,</span><br />
+            <span className="inline-block animate-[slideInRight_1s_ease-out_0.4s_both]">personalised for your business.</span><br />
+            <span className="inline-block animate-[fadeInUp_1s_ease-out_0.6s_both] bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Making work feel like play.
+            </span>
           </h2>
         </div>
 
-        <div className="relative">
+        <div className="relative animate-[fadeInUp_1s_ease-out_0.8s_both]">
           <Carousel
             opts={{
               align: "center",
@@ -81,36 +83,38 @@ export const AIHelpers = () => {
           >
             <CarouselContent className="-ml-4">
               {aiHelpers.map((helper, index) => (
-                <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className={`pl-4 basis-full sm:basis-1/2 lg:basis-1/3 animate-[slideInUp_0.8s_ease-out_${index * 0.1}s_both]`}>
                   <a 
                     href="https://playosinc.pxf.io/sintraaustralia"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 cursor-pointer"
+                    className="flex flex-col items-center text-center hover:scale-110 transition-all duration-500 ease-out cursor-pointer group"
                   >
-                    <div className="relative mb-6">
-                      <div className="w-80 h-80 bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-3xl p-6 backdrop-blur-sm border border-gray-700/30">
+                    <div className="relative mb-6 transform transition-all duration-500 group-hover:rotate-3">
+                      <div className="w-80 h-80 bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-3xl p-6 backdrop-blur-sm border border-gray-700/30 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20">
                         <img 
                           src={helper.image}
                           alt={helper.name}
-                          className="w-full h-full object-cover rounded-2xl"
+                          className="w-full h-full object-cover rounded-2xl transition-all duration-500 group-hover:brightness-110 group-hover:contrast-110"
                         />
                       </div>
+                      {/* Floating animation effect */}
+                      <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-white mb-2">
+                    <h3 className="text-2xl font-bold text-white mb-2 transition-all duration-300 group-hover:text-purple-300 group-hover:scale-105">
                       {helper.name}
                     </h3>
                     
-                    <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
+                    <p className="text-gray-400 text-sm max-w-xs leading-relaxed transition-all duration-300 group-hover:text-gray-300">
                       {helper.role}. {helper.description}
                     </p>
                   </a>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-8 top-1/2 -translate-y-1/2 bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700/80 w-12 h-12 rounded-full" />
-            <CarouselNext className="absolute right-8 top-1/2 -translate-y-1/2 bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700/80 w-12 h-12 rounded-full" />
+            <CarouselPrevious className="absolute left-8 top-1/2 -translate-y-1/2 bg-gray-800/80 border-gray-600 text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 w-12 h-12 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/25" />
+            <CarouselNext className="absolute right-8 top-1/2 -translate-y-1/2 bg-gray-800/80 border-gray-600 text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 w-12 h-12 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/25" />
           </Carousel>
         </div>
       </div>

@@ -109,13 +109,108 @@ export default {
 					'50%': {
 						transform: 'scale(1.02)'
 					}
+				},
+				'slideInLeft': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(-100px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
+				},
+				'slideInRight': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(100px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
+				},
+				'slideInUp': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(50px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slideInDown': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(-50px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fadeInUp': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'scaleIn': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.8)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px) rotate(0deg)'
+					},
+					'50%': {
+						transform: 'translateY(-10px) rotate(5deg)'
+					}
+				},
+				'gradientShift': {
+					'0%, 100%': {
+						backgroundPosition: '0% 50%'
+					},
+					'50%': {
+						backgroundPosition: '100% 50%'
+					}
+				},
+				'drawLine': {
+					'0%': {
+						strokeDasharray: '0 1000',
+						opacity: '0'
+					},
+					'100%': {
+						strokeDasharray: '1000 0',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
-				'breathe': 'breathe 4s ease-in-out infinite'
+				'breathe': 'breathe 4s ease-in-out infinite',
+				'slideInLeft': 'slideInLeft 1s ease-out',
+				'slideInRight': 'slideInRight 1s ease-out',
+				'slideInUp': 'slideInUp 0.8s ease-out',
+				'slideInDown': 'slideInDown 1s ease-out',
+				'fadeInUp': 'fadeInUp 1s ease-out',
+				'scaleIn': 'scaleIn 1s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'gradientShift': 'gradientShift 10s ease-in-out infinite',
+				'drawLine': 'drawLine 1.5s ease-out'
 			}
 		}
 	},
