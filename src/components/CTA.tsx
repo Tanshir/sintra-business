@@ -19,7 +19,7 @@ export const CTA = () => {
               <Button 
                 size="lg" 
                 className="bg-white text-purple-600 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto"
-                onClick={() => window.open('https://www.10xsocialmedia.agency/sintra', '_blank')}
+                onClick={() => window.open('https://playosinc.pxf.io/sintraaustralia', '_blank')}
               >
                 Start Your AI Team
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />

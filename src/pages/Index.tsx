@@ -30,7 +30,7 @@ const Index = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-3xl"></div>
               <a 
-                href="https://www.10xsocialmedia.agency/sintra" 
+                href="https://playosinc.pxf.io/sintraaustralia" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block"

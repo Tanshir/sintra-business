@@ -1,3 +1,4 @@
+
 import {
   Carousel,
   CarouselContent,
@@ -82,7 +83,7 @@ export const AIHelpers = () => {
               {aiHelpers.map((helper, index) => (
                 <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                   <a 
-                    href="https://www.10xsocialmedia.agency/sintra"
+                    href="https://playosinc.pxf.io/sintraaustralia"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 cursor-pointer"

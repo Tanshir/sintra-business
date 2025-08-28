@@ -1,3 +1,4 @@
+
 import { Globe, Facebook, Users, FileText, MessageSquare, DollarSign } from "lucide-react";
 
 export const LearnBusiness = () => {
@@ -127,7 +128,7 @@ export const LearnBusiness = () => {
               
               {/* AI Character container with robot astronaut */}
               <a 
-                href="https://www.10xsocialmedia.agency/sintra" 
+                href="https://playosinc.pxf.io/sintraaustralia" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block"
