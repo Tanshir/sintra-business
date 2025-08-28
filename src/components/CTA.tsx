@@ -1,12 +1,14 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const CTA = () => {
+  const [ref, isVisible] = useScrollAnimation();
+
   return (
-    <section className="py-16 sm:py-20 px-4 animate-slide-up">
+    <section ref={ref} className="py-16 sm:py-20 px-4">
       <div className="container mx-auto">
-        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 p-8 sm:p-12 text-center hover:scale-105 transition-all duration-500">
+        <div className={`relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 p-8 sm:p-12 text-center transition-all duration-1000 ${isVisible ? 'animate-slide-left hover:scale-105' : 'opacity-0 -translate-x-20'} hover:scale-105 transition-all duration-500`}>
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative z-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
@@ -19,7 +21,7 @@ export const CTA = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-white text-purple-600 hover:bg-gray-100 hover:scale-105 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 group"
+                className="bg-white text-purple-600 hover:bg-gray-100 hover:scale-105 hover:rotate-3 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 group"
                 onClick={() => window.open('https://playosinc.pxf.io/sintraaustralia', '_blank')}
               >
                 Start Your AI Team

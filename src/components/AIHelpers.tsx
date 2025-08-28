@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -7,6 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const aiHelpers = [
   {
@@ -60,11 +60,13 @@ const aiHelpers = [
 ];
 
 export const AIHelpers = () => {
+  const [ref, isVisible] = useScrollAnimation();
+
   return (
-    <section className="py-16 sm:py-20 px-4 bg-black overflow-hidden">
+    <section ref={ref} className="py-16 sm:py-20 px-4 bg-black overflow-hidden">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight animate-slide-up">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-slide-left' : 'opacity-0 -translate-x-20'}`}>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
             <span className="inline-block">Sintra.</span>{" "}
             <span className="inline-block">World's first AI helpers,</span><br />
             <span className="inline-block">personalised for your business.</span><br />
@@ -74,7 +76,7 @@ export const AIHelpers = () => {
           </h2>
         </div>
 
-        <div className="relative opacity-0 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
+        <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'animate-slide-right' : 'opacity-0 translate-x-20'}`}>
           <Carousel
             opts={{
               align: "center",
@@ -112,8 +114,8 @@ export const AIHelpers = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-8 top-1/2 -translate-y-1/2 bg-gray-800/80 border-gray-600 text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 w-12 h-12 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/25" />
-            <CarouselNext className="absolute right-8 top-1/2 -translate-y-1/2 bg-gray-800/80 border-gray-600 text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 w-12 h-12 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/25" />
+            <CarouselPrevious className="absolute left-8 top-1/2 -translate-y-1/2 bg-gray-800/80 border-gray-600 text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 w-12 h-12 rounded-full transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-lg hover:shadow-purple-500/25" />
+            <CarouselNext className="absolute right-8 top-1/2 -translate-y-1/2 bg-gray-800/80 border-gray-600 text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 w-12 h-12 rounded-full transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-lg hover:shadow-purple-500/25" />
           </Carousel>
         </div>
       </div>

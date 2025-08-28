@@ -1,7 +1,9 @@
-
 import { Globe, Facebook, Users, FileText, MessageSquare, DollarSign } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const LearnBusiness = () => {
+  const [ref, isVisible] = useScrollAnimation();
+  
   const connectionPoints = [
     {
       id: 1,
@@ -62,16 +64,16 @@ export const LearnBusiness = () => {
   ];
 
   return (
-    <section className="hidden sm:block py-16 sm:py-24 lg:py-32 px-4 relative overflow-hidden">
+    <section ref={ref} className="hidden sm:block py-16 sm:py-24 lg:py-32 px-4 relative overflow-hidden">
       <div className="container mx-auto">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight animate-slide-up">
+        <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transition-all duration-1000 ${isVisible ? 'animate-slide-right' : 'opacity-0 translate-x-20'}`}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             <span className="inline-block hover:scale-105 transition-transform duration-300">They learn your business.</span>
             <br />
             <span className="text-gray-400 inline-block hover:text-white transition-colors duration-300">Just like real employees.</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+          <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4">
             Answer questions about your brand, add files, instructions, and your website for more
             <br className="hidden sm:block" />
             unique results. The more information they have, the better the outcome.
@@ -79,8 +81,7 @@ export const LearnBusiness = () => {
         </div>
 
         {/* Interactive diagram */}
-        <div className="relative h-[700px] sm:h-[700px] lg:h-[800px] max-w-6xl mx-auto opacity-0 animate-scale-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-          {/* Connection lines */}
+        <div className={`relative h-[700px] sm:h-[700px] lg:h-[800px] max-w-6xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? 'animate-slide-left' : 'opacity-0 -translate-x-20'}`}>
           <svg className="absolute inset-0 w-full h-full pointer-events-none hidden sm:block" style={{ zIndex: 1 }}>
             <defs>
               <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -102,12 +103,8 @@ export const LearnBusiness = () => {
           {connectionPoints.map((point, index) => (
             <div
               key={point.id}
-              className={`absolute ${point.className} opacity-0 animate-fade-in`}
-              style={{ 
-                zIndex: 2,
-                animationDelay: `${0.6 + index * 0.1}s`,
-                animationFillMode: 'forwards'
-              }}
+              className={`absolute ${point.className}`}
+              style={{ zIndex: 2 }}
             >
               <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700/50 p-3 sm:p-4 min-w-[160px] sm:min-w-[240px] hover:bg-gray-800/80 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20 group">
                 <div className="flex items-center space-x-2 sm:space-x-3">
@@ -124,7 +121,7 @@ export const LearnBusiness = () => {
           ))}
 
           {/* Central AI character */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 animate-scale-in" style={{ zIndex: 3, animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ zIndex: 3 }}>
             <div className="relative flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-3xl"></div>
               
