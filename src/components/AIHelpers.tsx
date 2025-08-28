@@ -66,7 +66,7 @@ export const AIHelpers = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
             Sintra. World's first AI helpers,<br />
-            personalized for your business.<br />
+            personalised for your business.<br />
             Making work feel like play.
           </h2>
         </div>
