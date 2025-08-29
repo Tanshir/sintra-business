@@ -72,7 +72,7 @@ export const Hero = () => {
         <div className={`mt-12 sm:mt-16 mb-8 sm:mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className="flex justify-center">
             <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700 p-4 sm:p-6 text-center hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20">
-              <div className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">Only $150</div>
+              <div className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">Only $1.50</div>
               <div className="text-sm sm:text-base text-gray-400">Per Day</div>
             </div>
           </div>
