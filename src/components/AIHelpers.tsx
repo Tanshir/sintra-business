@@ -1,3 +1,4 @@
+
 import {
   Carousel,
   CarouselContent,
@@ -70,7 +71,7 @@ export const AIHelpers = () => {
             <span className="inline-block">Sintra.</span>{" "}
             <span className="inline-block">World's first AI helpers,</span><br />
             <span className="inline-block">personalised for your business.</span><br />
-            <span className="inline-block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="inline-block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent leading-relaxed py-2">
               Making work feel like play.
             </span>
           </h2>
