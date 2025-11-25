@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sintra Business - AI Workforce</title>
+    <meta name="description" content="Revolutionary AI platform that helps businesses automate, optimize, and scale with cutting-edge artificial intelligence technology.">
+    <meta name="author" content="10x AI Business Solutions">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sintra Business">
+    <meta property="og:description" content="Revolutionary AI platform that helps businesses automate, optimize, and scale with cutting-edge artificial intelligence technology.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Background Gradient */
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #000 50%, #1a1a2e 100%);
+            z-index: -10;
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-img {
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .logo-link:hover .logo-img {
+            transform: rotate(6deg);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #fff;
+            transition: all 0.3s;
+        }
+        
+        .logo-link:hover .logo-text {
+            color: #d8b4fe;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 1rem 5rem;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+        
+        .hero-text {
+            text-align: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-text {
+                text-align: left;
+            }
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (min-width: 640px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(to right, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            @media (min-width: 1024px) {
+                .hero-buttons {
+                    justify-content: flex-start;
+                }
+            }
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #a855f7, #ec4899);
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, #9333ea, #db2777);
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.25);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #4b5563;
+            color: #d1d5db;
+        }
+        
+        .btn-outline:hover {
+            background: #1f2937;
+            border-color: #a855f7;
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 20px rgba(75, 85, 99, 0.25);
+        }
+        
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2));
+            border-radius: 1.5rem;
+            filter: blur(3rem);
+        }
+        
+        .hero-image img {
+            position: relative;
+            z-index: 10;
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            transition: all 0.5s;
+        }
+        
+        .hero-image img:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Pricing Card */
+        .pricing-section {
+            margin: 4rem 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .pricing-card {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 1rem;
+            border: 1px solid #374151;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card:hover {
+            border-color: rgba(168, 85, 247, 0.5);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+        }
+        
+        .pricing-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-period {
+            color: #9ca3af;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        .stat-card {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 1rem;
+            border: 1px solid #374151;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            border-color: rgba(168, 85, 247, 0.5);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #9ca3af;
+        }
+        
+        /* AI Helpers Section */
+        .ai-helpers {
+            padding: 5rem 1rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            line-height: 1.3;
+        }
+        
+        @media (min-width: 640px) {
+            .section-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 1.5rem;
+            border: 1px solid #374151;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .carousel-item {
+                min-width: calc(50% - 1rem);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .carousel-item {
+                min-width: calc(33.333% - 1.333rem);
+            }
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto 1.5rem;
+            border-radius: 1rem;
+        }
+        
+        .carousel-item h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .carousel-item .role {
+            color: #a855f7;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+        
+        .carousel-item .description {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .carousel-btn {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: rgba(17, 24, 39, 0.8);
+            border: 1px solid #374151;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .carousel-btn:hover {
+            background: #a855f7;
+            border-color: #a855f7;
+            transform: scale(1.1);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 640px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .feature-card {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 1.5rem;
+            border: 1px solid #374151;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            border-color: rgba(168, 85, 247, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(to right, #a855f7, #ec4899);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 1rem;
+        }
+        
+        .cta-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2rem;
+            background: linear-gradient(to right, #9333ea, #db2777, #9333ea);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (min-width: 640px) {
+            .cta-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .cta-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-white {
+            background: #fff;
+            color: #9333ea;
+            font-weight: 700;
+        }
+        
+        .btn-white:hover {
+            background: #f3f4f6;
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Animated Image Section */
+        .animated-image-section {
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+        
+        .animated-image-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .animated-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
+            border-radius: 1.5rem;
+            filter: blur(3rem);
+        }
+        
+        .animated-image-wrapper img {
+            position: relative;
+            z-index: 10;
+            max-width: 1000px;
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s;
+            mix-blend-mode: screen;
+            opacity: 0.9;
+            filter: contrast(1.1) brightness(0.9);
+        }
+        
+        .animated-image-wrapper:hover img {
+            transform: scale(1.05);
+            filter: contrast(1.1) brightness(1.1);
+            box-shadow: 0 25px 50px rgba(168, 85, 247, 0.25);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            max-width: 800px;
+            width: 90%;
+            aspect-ratio: 16/9;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+        }
+        
+        .modal iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+        
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mt-12 {
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Gradient -->
+    <div class="bg-gradient"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer" class="logo-link">
+                    <img src="https://p98pqg.lovableproject.com/lovable-uploads/3d8ba123-789d-4596-93a2-d9ecb67e88a0.png" alt="10X AI Business Solutions" class="logo-img">
+                    <span class="logo-text">Sintra Business</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Text Content -->
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span>Your employees</span><br>
+                        <span class="gradient-text">that never sleep,</span><br>
+                        <span>never complain</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        Meet your AI workforce - employees that work 24/7, handle any task, and scale with your business needs.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            Get Started
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                        <button onclick="openVideoModal()" class="btn btn-outline">
+                            <i data-lucide="play"></i>
+                            Watch Demo
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="hero-image">
+                    <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer">
+                        <img src="https://p98pqg.lovableproject.com/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" alt="AI Robot Characters">
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Pricing -->
+            <div class="pricing-section">
+                <div class="pricing-card">
+                    <div class="pricing-amount">Only $1.50</div>
+                    <div class="pricing-period">Per Day</div>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Always Working</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Accuracy Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Tasks Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Sick Days</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- AI Helpers Section -->
+    <section class="ai-helpers">
+        <div class="container">
+            <h2 class="section-title">
+                Sintra. World's first AI helpers,<br>
+                personalised for your business.<br>
+                <span class="gradient-text" style="line-height: 1.6; padding: 0.5rem 0;">Making work feel like play.</span>
+            </h2>
+            
+            <div class="carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- AI Helper 1 -->
+                    <div class="carousel-item">
+                        <img src="https://p98pqg.lovableproject.com/lovable-uploads/08846ad7-808f-48b3-955c-1775f1340046.png" alt="Sarah - Marketing Lead">
+                        <h3>Sarah</h3>
+                        <div class="role">Marketing Lead</div>
+                        <p class="description">Specialized in creating compelling content, managing campaigns, and analyzing marketing metrics to drive growth.</p>
+                    </div>
+                    
+                    <!-- AI Helper 2 -->
+                    <div class="carousel-item">
+                        <img src="https://p98pqg.lovableproject.com/lovable-uploads/37eeee79-c761-44c5-94cd-92294d63272d.png" alt="Alex - Sales Executive">
+                        <h3>Alex</h3>
+                        <div class="role">Sales Executive</div>
+                        <p class="description">Expert in lead generation, customer relationship management, and closing deals with personalized approaches.</p>
+                    </div>
+                    
+                    <!-- AI Helper 3 -->
+                    <div class="carousel-item">
+                        <img src="https://p98pqg.lovableproject.com/lovable-uploads/5580b1ec-5bc4-45c7-90be-5b2392dc4a60.png" alt="Jordan - Customer Support">
+                        <h3>Jordan</h3>
+                        <div class="role">Customer Support</div>
+                        <p class="description">Provides instant, empathetic customer service across all channels, resolving issues efficiently 24/7.</p>
+                    </div>
+                    
+                    <!-- AI Helper 4 -->
+                    <div class="carousel-item">
+                        <img src="https://p98pqg.lovableproject.com/lovable-uploads/bb6ed5a9-a764-4c02-9823-a30c53f2d19e.png" alt="Morgan - Data Analyst">
+                        <h3>Morgan</h3>
+                        <div class="role">Data Analyst</div>
+                        <p class="description">Transforms complex data into actionable insights, creating reports and visualizations for informed decision-making.</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="prevSlide()">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn" onclick="nextSlide()">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="text-center mb-6">
+                <h2 class="section-title">
+                    Meet Your New <span class="gradient-text">AI Workforce</span>
+                </h2>
+                <p class="hero-subtitle">
+                    Transform your business with AI employees that work tirelessly to grow your company
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="bot"></i>
+                    </div>
+                    <h3>AI Co-workers</h3>
+                    <p>Deploy AI employees that integrate seamlessly with your team and handle complex tasks autonomously.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3>24/7 Availability</h3>
+                    <p>Your AI workforce never sleeps, ensuring continuous productivity around the clock.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3>Instant Scaling</h3>
+                    <p>Scale your workforce instantly based on demand without recruitment delays or training time.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h3>Enterprise Ready</h3>
+                    <p>Built with enterprise-grade security and compliance to protect your business data.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="bar-chart-3"></i>
+                    </div>
+                    <h3>Performance Analytics</h3>
+                    <p>Track productivity, monitor performance, and optimize your AI workforce in real-time.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3>Team Integration</h3>
+                    <p>AI employees work alongside your human team, enhancing collaboration and productivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2 class="cta-title">
+                        A co-worker who's always on the clock.
+                    </h2>
+                    <p class="cta-subtitle">
+                        Deploy your AI workforce today and experience the future of business automation.
+                    </p>
+                    <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer" class="btn btn-white">
+                        Start Your AI Team
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Animated Image Section -->
+    <section class="animated-image-section">
+        <div class="container">
+            <div class="animated-image-wrapper">
+                <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer">
+                    <img src="https://p98pqg.lovableproject.com/lovable-uploads/1f9e2528-31f3-48d9-9854-d7e820902cd9.png" alt="AI Team Characters">
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal" onclick="closeVideoModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeVideoModal()">&times;</button>
+            <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Carousel functionality
+        let currentSlide = 0;
+        const track = document.getElementById('carouselTrack');
+        const items = document.querySelectorAll('.carousel-item');
+        let itemsPerView = 1;
+        
+        function updateItemsPerView() {
+            if (window.innerWidth >= 1024) {
+                itemsPerView = 3;
+            } else if (window.innerWidth >= 768) {
+                itemsPerView = 2;
+            } else {
+                itemsPerView = 1;
+            }
+        }
+        
+        function updateCarousel() {
+            updateItemsPerView();
+            const itemWidth = items[0].offsetWidth;
+            const gap = 32; // 2rem
+            const offset = -(currentSlide * (itemWidth + gap));
+            track.style.transform = `translateX(${offset}px)`;
+        }
+        
+        function nextSlide() {
+            const maxSlides = items.length - itemsPerView;
+            if (currentSlide < maxSlides) {
+                currentSlide++;
+                updateCarousel();
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateCarousel();
+            }
+        }
+        
+        // Video modal functions
+        function openVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const videoFrame = document.getElementById('videoFrame');
+            videoFrame.src = 'https://www.youtube.com/embed/Bc2q06VhKIs?autoplay=1&controls=1&modestbranding=1&showinfo=0';
+            modal.classList.add('active');
+        }
+        
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const videoFrame = document.getElementById('videoFrame');
+            videoFrame.src = '';
+            modal.classList.remove('active');
+        }
+        
+        // Initialize carousel on load
+        window.addEventListener('load', () => {
+            updateCarousel();
+            lucide.createIcons();
+        });
+        
+        // Update carousel on resize
+        window.addEventListener('resize', updateCarousel);
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe sections for animations
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
+    </script>
+</body>
+</html>
