@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sintra Business - AI Workforce</title>
+    <meta name="description" content="Revolutionary AI platform that helps businesses automate, optimize, and scale with cutting-edge artificial intelligence technology.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* Strong Dark Background - No backdrop-filter */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at top center, #1e1b4b 0%, #0f0a1f 40%, #000000 100%);
+            z-index: -2;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header Styles - Solid background for GHL */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            background: rgba(10, 10, 15, 0.95);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-img {
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-link:hover .logo-img {
+            transform: rotate(6deg);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+        
+        .logo-link:hover .logo-text {
+            color: #d8b4fe;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 1rem 5rem;
+            position: relative;
+            background: transparent;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .hero-text {
+            text-align: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-text {
+                text-align: left;
+            }
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+        
+        @media (min-width: 640px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #c084fc 0%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-buttons {
+                justify-content: flex-start;
+            }
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 0.75rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5);
+        }
+        
+        .btn-outline {
+            background: rgba(17, 24, 39, 0.8);
+            border: 2px solid rgba(168, 85, 247, 0.5);
+            color: #ffffff;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: #a855f7;
+            transform: translateY(-2px) scale(1.05);
+        }
+        
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.2));
+            filter: blur(60px);
+            z-index: 0;
+        }
+        
+        .hero-image img {
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Pricing Card */
+        .pricing-section {
+            margin: 4rem 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .pricing-card {
+            background: rgba(17, 24, 39, 0.9);
+            border-radius: 1.5rem;
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .pricing-card:hover {
+            border-color: #a855f7;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.3);
+        }
+        
+        .pricing-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .pricing-period {
+            color: #9ca3af;
+            font-size: 1.125rem;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+            }
+        }
+        
+        .stat-card {
+            background: rgba(17, 24, 39, 0.9);
+            border-radius: 1rem;
+            border: 2px solid rgba(168, 85, 247, 0.2);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            border-color: #a855f7;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.25);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        
+        .stat-label {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+        
+        /* AI Helpers Section */
+        .ai-helpers {
+            padding: 5rem 1rem;
+            background: rgba(10, 10, 15, 0.5);
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .ai-helpers::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(ellipse, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            line-height: 1.3;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (min-width: 640px) {
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+        
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            background: rgba(17, 24, 39, 0.95);
+            border-radius: 1.5rem;
+            border: 2px solid rgba(168, 85, 247, 0.25);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-item:hover {
+            border-color: #a855f7;
+            transform: scale(1.02);
+        }
+        
+        @media (min-width: 768px) {
+            .carousel-item {
+                min-width: calc(50% - 1rem);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .carousel-item {
+                min-width: calc(33.333% - 1.333rem);
+            }
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin: 0 auto 1.5rem;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .carousel-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .carousel-item h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        
+        .carousel-item .role {
+            color: #c084fc;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .carousel-item .description {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .carousel-btn {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: rgba(17, 24, 39, 0.9);
+            border: 2px solid rgba(168, 85, 247, 0.5);
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-btn:hover {
+            background: #a855f7;
+            border-color: #a855f7;
+            transform: scale(1.1);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 1rem;
+            background: rgba(10, 10, 15, 0.3);
+            position: relative;
+        }
+        
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(ellipse, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (min-width: 640px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .feature-card {
+            background: rgba(17, 24, 39, 0.95);
+            border-radius: 1.5rem;
+            border: 2px solid rgba(168, 85, 247, 0.2);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: #a855f7;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+        }
+        
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        
+        .feature-card p {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 1rem;
+            background: rgba(10, 10, 15, 0.6);
+            text-align: center;
+            position: relative;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse, rgba(168, 85, 247, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+        
+        @media (min-width: 640px) {
+            .cta-title {
+                font-size: 3rem;
+            }
+        }
+        
+        .cta-subtitle {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Animated Image Section */
+        .animated-image-section {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .animated-image-link {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .animated-image-link::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.3), transparent);
+            filter: blur(40px);
+            z-index: 0;
+        }
+        
+        .animated-image {
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .animated-image:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-modal.active {
+            display: flex;
+        }
+        
+        .video-modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            color: #a855f7;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0.75rem;
+        }
+        
+        /* Utility Classes */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Gradient Background -->
+    <div class="bg-gradient"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer" class="logo-link">
+                    <img src="https://gbadppfopxijmfbcxcvj.supabase.co/storage/v1/object/public/project-files/lovable-uploads/3d8ba123-789d-4596-93a2-d9ecb67e88a0.png" 
+                         alt="10X AI Business Solutions Logo" 
+                         class="logo-img">
+                    <span class="logo-text">Sintra Business</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Build Your <span class="gradient-text">AI Workforce</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Revolutionary AI platform that helps businesses automate, optimize, and scale with cutting-edge artificial intelligence technology.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            Start Free Trial
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                        <button onclick="openVideoModal()" class="btn btn-outline">
+                            <i data-lucide="play-circle"></i>
+                            Watch Demo
+                        </button>
+                    </div>
+                    
+                    <!-- Pricing Card -->
+                    <div class="pricing-section">
+                        <div class="pricing-card">
+                            <div class="pricing-amount">$97</div>
+                            <div class="pricing-period">per month</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">10x</div>
+                            <div class="stat-label">Productivity</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Available</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">AI Helpers</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Scalable</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="https://gbadppfopxijmfbcxcvj.supabase.co/storage/v1/object/public/project-files/lovable-uploads/1f9e2528-31f3-48d9-9854-d7e820902cd9.png" 
+                         alt="AI Helper Characters" 
+                         loading="eager">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Helpers Carousel Section -->
+    <section class="ai-helpers">
+        <div class="container">
+            <h2 class="section-title">
+                Sintra - <span class="gradient-text">World's first AI helpers</span>,<br>
+                personalised for your business
+            </h2>
+            
+            <div class="carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Emmie -->
+                    <div class="carousel-item">
+                        <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer">
+                            <img src="https://gbadppfopxijmfbcxcvj.supabase.co/storage/v1/object/public/project-files/lovable-uploads/08846ad7-808f-48b3-955c-1775f1340046.png" alt="Emmie - Email Helper">
+                            <h3>Emmie</h3>
+                            <div class="role">Email Helper</div>
+                            <p class="description">Manages your inbox, drafts responses, and keeps your communications organized and professional.</p>
+                        </a>
+                    </div>
+                    
+                    <!-- Gigi -->
+                    <div class="carousel-item">
+                        <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer">
+                            <img src="https://gbadppfopxijmfbcxcvj.supabase.co/storage/v1/object/public/project-files/lovable-uploads/75d9a478-e8c1-44fd-b80b-e735216ec05c.png" alt="Gigi - Design Helper">
+                            <h3>Gigi</h3>
+                            <div class="role">Design Helper</div>
+                            <p class="description">Creates stunning visuals and designs that perfectly match your brand identity.</p>
+                        </a>
+                    </div>
+                    
+                    <!-- Penn -->
+                    <div class="carousel-item">
+                        <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer">
+                            <img src="https://gbadppfopxijmfbcxcvj.supabase.co/storage/v1/object/public/project-files/lovable-uploads/5580b1ec-5bc4-45c7-90be-5b2392dc4a60.png" alt="Penn - Content Writer">
+                            <h3>Penn</h3>
+                            <div class="role">Content Writer</div>
+                            <p class="description">Crafts engaging content that resonates with your audience and drives results.</p>
+                        </a>
+                    </div>
+                    
+                    <!-- Scouty -->
+                    <div class="carousel-item">
+                        <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer">
+                            <img src="https://gbadppfopxijmfbcxcvj.supabase.co/storage/v1/object/public/project-files/lovable-uploads/38a3f83a-c4ae-4680-8f2c-6ba7d1906382.png" alt="Scouty - Research Helper">
+                            <h3>Scouty</h3>
+                            <div class="role">Research Helper</div>
+                            <p class="description">Conducts thorough research and provides valuable insights for your business decisions.</p>
+                        </a>
+                    </div>
+                    
+                    <!-- Seomi -->
+                    <div class="carousel-item">
+                        <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer">
+                            <img src="https://gbadppfopxijmfbcxcvj.supabase.co/storage/v1/object/public/project-files/lovable-uploads/37eeee79-c761-44c5-94cd-92294d63272d.png" alt="Seomi - SEO Expert">
+                            <h3>Seomi</h3>
+                            <div class="role">SEO Expert</div>
+                            <p class="description">Optimizes your online presence to rank higher and reach more customers.</p>
+                        </a>
+                    </div>
+                    
+                    <!-- Soshie -->
+                    <div class="carousel-item">
+                        <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer">
+                            <img src="https://gbadppfopxijmfbcxcvj.supabase.co/storage/v1/object/public/project-files/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" alt="Soshie - Social Media Manager">
+                            <h3>Soshie</h3>
+                            <div class="role">Social Media Manager</div>
+                            <p class="description">Manages your social presence, creates engaging posts, and grows your audience.</p>
+                        </a>
+                    </div>
+                    
+                    <!-- Vizzy -->
+                    <div class="carousel-item">
+                        <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer">
+                            <img src="https://gbadppfopxijmfbcxcvj.supabase.co/storage/v1/object/public/project-files/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" alt="Vizzy - Video Creator">
+                            <h3>Vizzy</h3>
+                            <div class="role">Video Creator</div>
+                            <p class="description">Produces professional videos that captivate your audience and tell your story.</p>
+                        </a>
+                    </div>
+                    
+                    <!-- Milli -->
+                    <div class="carousel-item">
+                        <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer">
+                            <img src="https://gbadppfopxijmfbcxcvj.supabase.co/storage/v1/object/public/project-files/lovable-uploads/30aec08f-8570-42c8-ad55-434d4b25c17b.png" alt="Milli - Marketing Strategist">
+                            <h3>Milli</h3>
+                            <div class="role">Marketing Strategist</div>
+                            <p class="description">Develops data-driven marketing strategies to grow your business exponentially.</p>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="carousel-nav">
+                    <button onclick="prevSlide()" class="carousel-btn" aria-label="Previous">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button onclick="nextSlide()" class="carousel-btn" aria-label="Next">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="gradient-text">Powerful Features</span> for Modern Business
+            </h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Get instant results with our AI-powered automation that works at the speed of thought.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Enterprise-grade security ensures your data and operations remain protected.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <h3>Scalable Growth</h3>
+                    <p>Scale your AI workforce as your business grows without any limitations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3>Team Collaboration</h3>
+                    <p>Work seamlessly with your team and AI helpers in one unified platform.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <h3>Smart AI Learning</h3>
+                    <p>Our AI learns from your business to provide increasingly personalized results.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3>24/7 Availability</h3>
+                    <p>Your AI helpers never sleep, ensuring round-the-clock productivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    Ready to <span class="gradient-text">Transform</span> Your Business?
+                </h2>
+                <p class="cta-subtitle">
+                    Join thousands of businesses already using Sintra to automate, optimize, and scale their operations.
+                </p>
+                <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    Start Your Free Trial
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Image Section -->
+    <section class="animated-image-section">
+        <div class="container">
+            <a href="https://playosinc.pxf.io/sintraaustralia" target="_blank" rel="noopener noreferrer" class="animated-image-link">
+                <img src="https://gbadppfopxijmfbcxcvj.supabase.co/storage/v1/object/public/project-files/lovable-uploads/bb6ed5a9-a764-4c02-9823-a30c53f2d19e.png" 
+                     alt="Sintra AI Platform Preview" 
+                     class="animated-image">
+            </a>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <button onclick="closeVideoModal()" class="close-modal" aria-label="Close">&times;</button>
+            <div class="video-wrapper">
+                <iframe id="videoIframe" 
+                        src="" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Carousel functionality
+        let currentSlide = 0;
+        const track = document.getElementById('carouselTrack');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalSlides = items.length;
+        
+        function getItemsPerView() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        }
+        
+        function updateCarousel() {
+            const itemsPerView = getItemsPerView();
+            const maxSlide = Math.max(0, totalSlides - itemsPerView);
+            currentSlide = Math.min(currentSlide, maxSlide);
+            
+            const itemWidth = items[0].offsetWidth;
+            const gap = 32; // 2rem
+            const offset = -(currentSlide * (itemWidth + gap));
+            track.style.transform = `translateX(${offset}px)`;
+        }
+        
+        function nextSlide() {
+            const itemsPerView = getItemsPerView();
+            const maxSlide = totalSlides - itemsPerView;
+            if (currentSlide < maxSlide) {
+                currentSlide++;
+                updateCarousel();
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateCarousel();
+            }
+        }
+        
+        // Video Modal
+        function openVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            iframe.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1';
+            modal.classList.add('active');
+        }
+        
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            iframe.src = '';
+            modal.classList.remove('active');
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('videoModal').addEventListener('click', (e) => {
+            if (e.target.id === 'videoModal') {
+                closeVideoModal();
+            }
+        });
+        
+        // Responsive carousel update
+        window.addEventListener('resize', updateCarousel);
+        
+        // Initialize
+        updateCarousel();
+        
+        // Fade-in animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.feature-card, .stat-card, .carousel-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
